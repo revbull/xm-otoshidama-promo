@@ -1,0 +1,2 @@
+# xm-otoshidama-promo
+XMTradingのお年玉プロモーションおよび常設キャンペーンを紹介するためのランディングページ。

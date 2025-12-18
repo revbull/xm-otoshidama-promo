@@ -28,17 +28,165 @@ a{text-decoration:none;color:inherit}
 .top-cta{background:var(--green);padding:10px 18px;border-radius:4px;font-weight:bold}
 
 /* ================= HERO ================= */
-.hero{background:linear-gradient(135deg,#c9a57a,#b48a62);padding:70px 20px;color:#fff}
-.hero-inner{max-width:1200px;margin:auto;display:flex;gap:40px;align-items:center}
-.hero-text h1{font-size:42px;margin:20px 0}
-.hero-cta{background:var(--green);padding:14px 40px;border-radius:4px;font-weight:bold;display:inline-block}
-.hero-image img{max-width:100%}
+.xm-hero {
+  background: linear-gradient(135deg, #c9a57a, #b48a62);
+  padding: 100px 20px 120px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.xm-hero-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.xm-hero-text {
+  flex: 1;
+  z-index: 2;
+}
+
+.xm-hero-label {
+  display: inline-block;
+  background: rgba(0,0,0,0.7);
+  padding: 6px 14px;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.xm-hero-title {
+  font-size: 44px;
+  line-height: 1.25;
+  margin-bottom: 22px;
+}
+
+.xm-hero-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 38px;
+}
+
+.xm-hero-cta {
+  display: inline-block;
+  background: #2fa84f;
+  color: #fff;
+  padding: 16px 46px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* ===== IMAGE TUNED FOR TRANSPARENT PNG ===== */
+
+.xm-hero-image {
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+.xm-hero-image img {
+  max-height: 460px;
+  width: auto;
+  position: relative;
+  top: 20px;                 /* визуално „стъпване“ */
+  filter:
+    drop-shadow(0 40px 40px rgba(0,0,0,0.25))
+    drop-shadow(0 10px 20px rgba(0,0,0,0.18));
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .xm-hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .xm-hero-title {
+    font-size: 32px;
+  }
+
+  .xm-hero-image img {
+    max-height: 360px;
+    top: 0;
+  }
+}
 
 /* ================= INFO ================= */
-.info-section{background:#fff;padding:80px 20px;text-align:center}
-.reward-card{
-  max-width:320px;margin:40px auto;padding:30px;border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.1)
+.xm-info {
+  background: #fff;
+  padding: 100px 20px;
+}
+
+.xm-info-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.xm-info-visual {
+  flex: 0 0 260px;
+  text-align: center;
+}
+
+.xm-info-visual img {
+  width: 220px;
+  filter:
+    drop-shadow(0 25px 30px rgba(214,40,40,0.25))
+    drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+}
+
+.xm-info-text {
+  flex: 1;
+}
+
+.xm-info-title {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+.xm-info-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.xm-info-desc strong {
+  color: #d62828;
+}
+
+.xm-info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.xm-info-list li {
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.xm-info-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2fa84f;
+  font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .xm-info-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .xm-info-visual {
+    margin-bottom: 30px;
+  }
 }
 
 /* ================= STEPS ================= */
@@ -186,28 +334,61 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h1>賞金総額$150,000の獲得チャンス</h1>
-      <a href="#" class="hero-cta" onclick="goAff()">今すぐ登録</a>
+<section class="xm-hero">
+  <div class="xm-hero-inner">
+
+    <div class="xm-hero-text">
+      <div class="xm-hero-label">お年玉プロモーション</div>
+
+      <h1 class="xm-hero-title">
+        賞金総額$150,000の<br>
+        獲得チャンス！
+      </h1>
+
+      <p class="xm-hero-desc">
+        XMTrading 15周年記念。<br>
+        100名様に出金可能残高$1,500をプレゼント。
+      </p>
+
+      <a href="#" class="xm-hero-cta" onclick="goAff()">今すぐ登録</a>
     </div>
-    <div class="hero-image">
-      <img src="XM1st1.png">
+
+    <div class="xm-hero-image">
+      <img src="XM1st1.png" alt="Otoshidama">
     </div>
+
   </div>
 </section>
 
+
 <!-- INFO -->
-<section class="info-section">
-  <h2>幸運な新年のスタートに</h2>
-  <p>期間限定お年玉プロモーションに参加して特別なチャンスを獲得</p>
-  <div class="reward-card">
-    <img src="XM2nd.png" style="max-width:100%">
-    <p><strong>出金可能残高 $1,500</strong></p>
-    <p>当選者：100名様</p>
+<section class="xm-info">
+  <div class="xm-info-inner">
+
+    <div class="xm-info-visual">
+      <img src="otoshidama-icon.png" alt="Otoshidama">
+    </div>
+
+    <div class="xm-info-text">
+      <h2 class="xm-info-title">
+        幸運な新年のスタートに
+      </h2>
+
+      <p class="xm-info-desc">
+        期間限定お年玉プロモーション2025に参加して、
+        出金可能残高 <strong>$1,500</strong> を獲得するチャンス。
+      </p>
+
+      <ul class="xm-info-list">
+        <li>当選者：100名様</li>
+        <li>新規・既存のお客様が対象</li>
+        <li>キャンペーン期間：2025年12月9日〜30日</li>
+      </ul>
+    </div>
+
   </div>
 </section>
+
 
 <!-- STEPS -->
 <section class="xm-steps">

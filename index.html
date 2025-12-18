@@ -18,14 +18,40 @@ a{text-decoration:none;color:inherit}
 
 /* ================= TOP BAR ================= */
 .top-bar{
-  position:sticky;top:0;z-index:1000;
-  background:#000;color:#fff;
-  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#000;
+  color:#fff;
+  display:grid;
+  grid-template-columns: 1fr auto;
+  align-items:center;
   padding:12px 20px;
 }
-.top-right{display:flex;align-items:center;gap:15px}
-.top-logo{height:32px}
-.top-cta{background:var(--green);padding:10px 18px;border-radius:4px;font-weight:bold}
+
+.top-center{
+  text-align:center;
+  font-size:14px;
+  font-weight:500;
+}
+
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.top-logo{
+  height:32px;
+}
+
+.top-cta{
+  background:var(--green);
+  padding:12px 28px; /* по-дълъг бутон */
+  border-radius:4px;
+  font-weight:bold;
+  white-space:nowrap;
+}
 
 /* ================= HERO ================= */
 .xm-hero {
@@ -456,6 +482,24 @@ a{text-decoration:none;color:inherit}
     grid-template-columns: 1fr;
   }
 }
+  /* ================= RISK DISCLOSURE ================= */
+.xm-risk {
+  background: #111;
+  padding: 30px 20px;
+}
+
+.xm-risk-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.xm-risk p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #aaa;
+  text-align: center;
+}
+
 
 
 /* ================= STICKY MOBILE CTA ================= */
@@ -485,12 +529,18 @@ a{text-decoration:none;color:inherit}
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <p>¥15000の取引ボーナスでFX・仮想通貨CFDを取引可能</p>
+  <div class="top-center">
+    ¥15000の取引ボーナスでFX・仮想通貨CFDを取引可能
+  </div>
+
   <div class="top-right">
     <img src="logo.png" class="top-logo">
-    <a href="#" class="top-cta" onclick="goAff()">口座開設</a>
+    <a href="#" class="top-cta" onclick="goAff()">
+      今すぐ口座を開設する
+    </a>
   </div>
 </div>
+
 
 <!-- HERO -->
 <section class="xm-hero">
@@ -522,7 +572,7 @@ a{text-decoration:none;color:inherit}
     </div>
 
     <div class="xm-hero-image">
-      <img src="otoshidama-transparent.png" alt="Otoshidama">
+      <img src="otoshidama-icon.png" alt="Otoshidama">
     </div>
 
   </div>
@@ -719,7 +769,19 @@ a{text-decoration:none;color:inherit}
 
   </div>
 </section>
+  
+  <!-- RISK DISCLOSURE -->
+<footer class="xm-risk">
+  <div class="xm-risk-inner">
+   <p>
+  リスク警告： 投資元本を失うリスクが伴います。
+  レバレッジ商品は、全てのお客様に適しているわけではございません。
+  <a href="#" target="_blank">Tradexfinのリスク開示</a>および
+  <a href="#" target="_blank">Fintradeのリスク開示</a>を熟読ください。
+</p>
 
+  </div>
+</footer>
 
 <!-- STICKY CTA -->
 <div class="sticky-bottom-cta">
@@ -732,6 +794,20 @@ document.querySelectorAll(".faq-question").forEach(q=>{
   q.onclick=()=>q.parentElement.classList.toggle("active");
 });
 </script>
+  <script>
+function goAff(){
+  window.open(AFF_LINK,"_blank");
+}
+
+/* FAQ ACCORDION – FIXED */
+document.querySelectorAll(".xm-faq-question").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = btn.closest(".xm-faq-item");
+    item.classList.toggle("active");
+  });
+});
+</script>
+
 
 </body>
 </html>

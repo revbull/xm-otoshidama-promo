@@ -10,14 +10,47 @@
 </script>
 
 <style>
-:root { --green:#2fa84f; }
+:root{
+  /* Action (CTA) */
+  --green:#2fa84f;
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;}
-body{background:#f5f5f5;color:#111;}
+  /* JP winter base (indigo) */
+  --indigo-900:#1c2a40;
+  --indigo-800:#22304a;
+  --indigo-700:#2a3a58;
+
+  /* Accent (Shu-iro / red) */
+  --red:#d62828;
+
+  /* Neutrals */
+  --bg:#f6f7f9;
+  --white:#ffffff;
+  --text:#111;
+  --muted:rgba(17,17,17,.72);
+
+  /* Lines / shadows */
+  --line:#e6e6e6;
+  --shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+  
+body{background:var(--bg);color:var(--text);}
 a{text-decoration:none;color:inherit}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;}
+
+section{position:relative;}
+/* Consistent card style */
+.card{
+  background:var(--white);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+}
+
 
 /* ================= TOP BAR ================= */
-.top-bar{
+.top-bar{background:#000;color:#fff;}
+.top-cta{background:var(--green);}
+
+  .top-bar{
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -59,7 +92,10 @@ a{text-decoration:none;color:inherit}
 
 
 /* ================= HERO ================= */
-.xm-hero {
+.xm-hero-cta{background:var(--green);}
+.xm-hero-label{background:rgba(0,0,0,.60);}
+
+  .xm-hero {
   position: relative;
   background: linear-gradient(135deg, #bfc7d5, #a9b3c8);
   padding: 70px 20px 80px; /* по-плътен */
@@ -137,17 +173,29 @@ a{text-decoration:none;color:inherit}
 
 /* ===== IMAGE ===== */
 
-.xm-hero-image {
-  flex: 0 0 320px; /* по-малко */
+.xm-hero-image{
+  flex: 0 0 260px; /* по-тясна колона */
   text-align: center;
+  margin-left: -10px; /* леко „вкарване“ към текста */
 }
 
-.xm-hero-image img {
-  width: 260px;
+.xm-hero-image img{
+  width: 220px; /* по-малък размер */
+  max-width: 100%;
   filter:
-    drop-shadow(0 50px 45px rgba(0,0,0,0.35))
-    drop-shadow(0 15px 25px rgba(0,0,0,0.25));
+    drop-shadow(0 28px 32px rgba(0,0,0,.35))
+    drop-shadow(0 8px 14px rgba(0,0,0,.25));
 }
+.xm-hero-image::after{
+  content:"";
+  display:block;
+  width: 160px;
+  height: 6px;
+  margin: 12px auto 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.35), transparent 70%);
+  opacity: .35;
+}
+
 
 /* Mobile */
 @media (max-width: 900px) {
@@ -164,9 +212,34 @@ a{text-decoration:none;color:inherit}
     margin-top: 20px;
   }
 }
+  
+.xm-badges{display:flex;gap:8px;margin-bottom:14px}
+.xm-badge{
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:4px;
+  background:#eef1f6;
+  color:#22304a;
+  font-weight:600;
+}
+.xm-badge.red{
+  background:rgba(214,40,40,.12);
+  color:var(--red);
+}
+  .xm-hero-accent{
+  width: 36px;
+  height: 2px;
+  background: var(--red);
+  margin: 14px 0 18px;
+}
+
 
 /* ================= INFO ================= */
-.xm-info {
+.xm-info{background:var(--white);}
+.xm-faq{background:var(--white);}
+.xm-info-desc{color:var(--muted);}
+
+  .xm-info {
   background: #fff;
   padding: 100px 20px;
 }
@@ -372,7 +445,10 @@ a{text-decoration:none;color:inherit}
 }
 
   /* ================= EVERGREEN ================= */
-.xm-evergreen {
+.xm-steps{background:var(--bg);}
+.xm-evergreen{background:var(--bg);}
+
+  .xm-evergreen {
   background: #f6f7f9;
   padding: 100px 20px;
 }
@@ -505,6 +581,9 @@ a{text-decoration:none;color:inherit}
   text-align: center;
 }
 
+.xm-step-number{background:var(--red);}
+.xm-info-desc strong{color:var(--red);}
+.xm-faq-item{border-left:4px solid var(--red);}
 
 
 /* ================= STICKY MOBILE CTA ================= */
@@ -532,11 +611,56 @@ a{text-decoration:none;color:inherit}
     display: none;
   }
 }
+  .xm-divider{
+  text-align:center;
+  color:rgba(0,0,0,.25);
+  margin:40px 0;
+  font-size:14px;
+}
+.xm-step,
+.evergreen-card{
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.xm-step:hover,
+.evergreen-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+.xm-micro{
+  font-size:12px;
+  color:rgba(17,17,17,.55);
+  margin-top:8px;
+}
+.top-cta,
+.xm-hero-cta,
+.xm-steps-cta,
+.evergreen-cta{
+  transition:background .2s ease, transform .2s ease;
+}
+.top-cta:hover,
+.xm-hero-cta:hover,
+.xm-steps-cta:hover,
+.evergreen-cta:hover{
+  background:#279444;
+  transform:translateY(-1px);
+}
+@media (max-width: 900px){
+  .xm-hero-image{
+    margin-top: 16px;
+    margin-left: 0;
+  }
+
+  .xm-hero-image img{
+    width: 180px;
+  }
+}
+
 
 </style>
 </head>
 
 <body>
+  
 
 <!-- TOP BAR -->
 <div class="top-bar">
@@ -554,7 +678,8 @@ a{text-decoration:none;color:inherit}
     </a>
   </div>
 </div>
-
+  
+  <div class="xm-divider">◆</div>
 
 
 <!-- HERO -->
@@ -591,7 +716,15 @@ a{text-decoration:none;color:inherit}
     </div>
 
   </div>
+  
 </section>
+  <div class="xm-badges">
+  <span class="xm-badge red">期間限定</span>
+  <span class="xm-badge">15周年記念</span>
+</div>
+<div class="xm-hero-accent"></div>
+
+  
 
 <!-- INFO -->
 <section class="xm-info">
@@ -778,9 +911,10 @@ a{text-decoration:none;color:inherit}
 
     </div>
 
-    <p class="xm-evergreen-note">
-      ※ 各プロモーションには利用規約が適用されます。
-    </p>
+    <p class="xm-micro" style="margin-top:28px;">
+  ※ 常設プロモーションの詳細は公式条件をご確認ください
+</p>
+
 
   </div>
 </section>
@@ -813,6 +947,8 @@ document.querySelectorAll(".faq-question").forEach(q=>{
 function goAff(){
   window.open(AFF_LINK,"_blank");
 }
+    <p class="xm-micro">※ 利用規約が適用されます</p>
+
 
 /* FAQ ACCORDION – FIXED */
 document.querySelectorAll(".xm-faq-question").forEach(btn => {

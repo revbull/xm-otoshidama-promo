@@ -42,11 +42,83 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ================= STEPS ================= */
-.steps-section{background:#f7f7f7;padding:80px 20px;text-align:center}
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:40px 0}
-.step-card{
-  background:#fff;padding:30px;border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08)
+.xm-steps {
+  background: #f7f7f7;
+  padding: 90px 20px;
+}
+
+.xm-steps-inner {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.xm-steps-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.xm-steps-subtitle {
+  font-size: 16px;
+  opacity: 0.75;
+  margin-bottom: 60px;
+}
+
+.xm-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.xm-step {
+  background: #fff;
+  border-radius: 16px;
+  padding: 50px 20px 40px;
+  position: relative;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.xm-step-number {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #d62828;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 44px;
+}
+
+.xm-step-icon img {
+  width: 56px;
+  margin-bottom: 20px;
+}
+
+.xm-step-text {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.xm-steps-cta {
+  display: inline-block;
+  background: #2fa84f;
+  color: #fff;
+  padding: 16px 50px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .xm-steps-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ================= FAQ ================= */
@@ -138,15 +210,53 @@ a{text-decoration:none;color:inherit}
 </section>
 
 <!-- STEPS -->
-<section class="steps-section">
-  <h2>参加方法</h2>
-  <div class="steps-grid">
-    <div class="step-card">STEP 1<br>認証済みリアル口座を開設</div>
-    <div class="step-card">STEP 2<br>最低$200を入金</div>
-    <div class="step-card">STEP 3<br>対象商品を取引</div>
+<section class="xm-steps">
+  <div class="xm-steps-inner">
+
+    <h2 class="xm-steps-title">新しい年、新たなチャンス</h2>
+    <p class="xm-steps-subtitle">
+      以下の簡単な手順でお年玉プロモーションに参加できます
+    </p>
+
+    <div class="xm-steps-grid">
+
+      <div class="xm-step">
+        <div class="xm-step-number">1</div>
+        <div class="xm-step-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="">
+        </div>
+        <p class="xm-step-text">
+          認証済みの<br>リアル口座を開設
+        </p>
+      </div>
+
+      <div class="xm-step">
+        <div class="xm-step-number">2</div>
+        <div class="xm-step-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="">
+        </div>
+        <p class="xm-step-text">
+          最低$200を<br>ご入金
+        </p>
+      </div>
+
+      <div class="xm-step">
+        <div class="xm-step-number">3</div>
+        <div class="xm-step-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="">
+        </div>
+        <p class="xm-step-text">
+          FX・ゴールド・<br>シルバーを取引
+        </p>
+      </div>
+
+    </div>
+
+    <a href="#" class="xm-steps-cta">今すぐ登録</a>
+
   </div>
-  <a href="#" class="hero-cta" onclick="goAff()">今すぐ登録</a>
 </section>
+
 
 <!-- FAQ -->
 <section class="faq-section">

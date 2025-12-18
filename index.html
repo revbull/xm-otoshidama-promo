@@ -18,40 +18,45 @@ a{text-decoration:none;color:inherit}
 
 /* ================= TOP BAR ================= */
 .top-bar{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#000;
-  color:#fff;
-  display:grid;
-  grid-template-columns: 1fr auto;
-  align-items:center;
-  padding:12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #000;
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.top-left{
+  display: flex;
+  align-items: center;
 }
 
 .top-center{
-  text-align:center;
-  font-size:14px;
-  font-weight:500;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .top-right{
-  display:flex;
-  align-items:center;
-  gap:18px;
+  display: flex;
+  align-items: center;
 }
 
 .top-logo{
-  height:32px;
+  height: 32px;
 }
 
 .top-cta{
-  background:var(--green);
-  padding:12px 28px; /* по-дълъг бутон */
-  border-radius:4px;
-  font-weight:bold;
-  white-space:nowrap;
+  background: var(--green);
+  padding: 12px 30px; /* по-дълъг CTA */
+  border-radius: 4px;
+  font-weight: bold;
+  white-space: nowrap;
 }
+
 
 /* ================= HERO ================= */
 .xm-hero {
@@ -522,6 +527,12 @@ a{text-decoration:none;color:inherit}
   .top-bar p { display:none; }
   .sticky-bottom-cta { display:block; }
 }
+  @media (max-width: 900px) {
+  .top-center {
+    display: none;
+  }
+}
+
 </style>
 </head>
 
@@ -529,17 +540,21 @@ a{text-decoration:none;color:inherit}
 
 <!-- TOP BAR -->
 <div class="top-bar">
+  <div class="top-left">
+    <img src="logo.png" class="top-logo" alt="XM">
+  </div>
+
   <div class="top-center">
     ¥15000の取引ボーナスでFX・仮想通貨CFDを取引可能
   </div>
 
   <div class="top-right">
-    <img src="logo.png" class="top-logo">
     <a href="#" class="top-cta" onclick="goAff()">
       今すぐ口座を開設する
     </a>
   </div>
 </div>
+
 
 
 <!-- HERO -->

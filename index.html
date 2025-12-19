@@ -46,29 +46,20 @@ section{position:relative;}
 }
 
 
+
 /* ================= TOP BAR ================= */
 .top-bar{
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  /* Soft fade към Hero (JP-friendly) */
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,.95) 0%,
-    rgba(0,0,0,.85) 55%,
-    rgba(0,0,0,.65) 60%,
-    rgba(0,0,0,35) 70%
-  );
-
+  background: #000;
   color: #fff;
+
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 12px 20px;
-
-  /* лек „glass“ ефект */
-  backdrop-filter: blur(10px);
+  padding: 0 20px;   /* без вертикален padding */
+  height: 56px;      /* фиксирана височина */
 }
 
 /* LEFT */
@@ -78,8 +69,8 @@ section{position:relative;}
 }
 
 .top-logo{
-  height: 32px;
-  width: 20px
+  height: 100%;      /* логото = височината на bar-а */
+  max-height: 56px;
 }
 
 /* CENTER */
@@ -87,7 +78,6 @@ section{position:relative;}
   text-align: center;
   font-size: 14px;
   font-weight: 500;
-  opacity: .95;
   white-space: nowrap;
 }
 
@@ -99,24 +89,17 @@ section{position:relative;}
 
 .top-cta{
   background: var(--green);
-  padding: 12px 34px; /* по-дълъг CTA */
+  padding: 12px 36px;
   border-radius: 4px;
   font-weight: bold;
   white-space: nowrap;
-  transition: background .2s ease, transform .2s ease;
-}
-
-.top-cta:hover{
-  background: #279444;
-  transform: translateY(-1px);
 }
 
 /* Mobile */
 @media (max-width: 900px){
-  .top-center{
-    display: none;
-  }
+  .top-center{ display:none; }
 }
+
 
 
 

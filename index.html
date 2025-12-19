@@ -654,6 +654,72 @@ section{position:relative;}
     width: 180px;
   }
 }
+  /* ================= CELEBRATION SECTION ================= */
+.xm-celebration{
+  position: relative;
+  height: 420px;
+  background-image: url("NY_FX.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* subtle premium effect */
+  overflow: hidden;
+}
+
+/* Dark + color overlay to keep it premium */
+.xm-celebration-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(28,42,64,.75) 0%,
+      rgba(28,42,64,.55) 50%,
+      rgba(28,42,64,.85) 100%
+    );
+}
+
+/* Content */
+.xm-celebration-inner{
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.xm-celebration-inner h2{
+  font-size: 34px;
+  margin-bottom: 14px;
+  letter-spacing: .5px;
+}
+
+.xm-celebration-inner p{
+  font-size: 18px;
+  opacity: .95;
+  line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .xm-celebration{
+    height: 300px;
+    background-attachment: scroll;
+  }
+
+  .xm-celebration-inner h2{
+    font-size: 26px;
+  }
+
+  .xm-celebration-inner p{
+    font-size: 16px;
+  }
+}
+
 
 
 </style>
@@ -723,6 +789,19 @@ section{position:relative;}
   <span class="xm-badge">15周年記念</span>
 </div>
 <div class="xm-hero-accent"></div>
+
+  <section class="xm-celebration">
+  <div class="xm-celebration-overlay"></div>
+
+  <div class="xm-celebration-inner">
+    <h2>新年の特別な贈り物</h2>
+    <p>
+      お年玉ボーナスで、<br>
+      2025年を最高のスタートに。
+    </p>
+  </div>
+</section>
+
 
   
 

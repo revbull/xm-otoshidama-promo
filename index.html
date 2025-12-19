@@ -323,49 +323,124 @@ section{position:relative;}
   }
 }
 
+/* ================= INFO SECTION (FINAL) ================= */
 
+.xm-info{
+  position:relative;
+  padding-bottom:160px;
+}
 
-/* ================= INFO STICKER SECTION ================= */
+/* TOP PART (unchanged conceptually) */
+.xm-info-top{
+  padding:100px 20px 140px;
+  text-align:center;
+  color:#fff;
+}
 
-<section class="xm-info">
+.xm-info-top-title{
+  font-size:32px;
+  font-weight:700;
+  margin-bottom:10px;
+}
 
-  <!-- TOP PART (оставя се както е – с background image) -->
-  <div class="xm-info-top">
-    <h2 class="xm-info-top-title">新年の特別な贈り物</h2>
-    <p class="xm-info-top-text">
-      お年玉ボーナスで、<br>
-      2025年を最高のスタートに。
-    </p>
-  </div>
+.xm-info-top-text{
+  font-size:18px;
+  line-height:1.6;
+}
 
-  <!-- NOTE CARD -->
-  <div class="xm-info-note">
+/* NOTE CARD */
+.xm-info-note{
+  position:relative;
+  max-width:720px;
+  margin:-40px auto 0;
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:10px;
+  padding:70px 36px 36px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
 
-    <!-- STICKER -->
-    <div class="xm-info-sticker">
-      <img src="Info1.png" alt="お年玉">
-    </div>
+/* pressed frame under sticker */
+.xm-info-note::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:160px;
+  height:18px;
+  background:rgba(0,0,0,.04);
+  border-radius:0 0 20px 20px;
+  z-index:1;
+}
 
-    <h3 class="note-title">幸運な新年のスタートに</h3>
+/* micro connector line */
+.xm-info-note::after{
+  content:"";
+  position:absolute;
+  top:14px;
+  left:50%;
+  transform:translateX(-50%);
+  width:40px;
+  height:1px;
+  background:rgba(0,0,0,.15);
+  z-index:0;
+}
 
-    <p class="note-sub">
-      2025年12月9日～30日に開催される期間限定お年玉プロモーション2025で、
-      新年を最高に幸運な年に！
-    </p>
+/* STICKER */
+.xm-info-sticker{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translate(-50%, -50%) rotate(-0.5deg);
+  z-index:3;
+}
 
-    <p class="note-text">
-      プロモーションに登録、入金して、FX、ゴールド、またはシルバーを取引すると、<br>
-      特別なお年玉を獲得するチャンス！
-    </p>
+.xm-info-sticker img{
+  width:130px;
+  display:block;
+  filter:
+    drop-shadow(0 6px 14px rgba(0,0,0,.22))
+    drop-shadow(0 1px 1px rgba(255,255,255,.35));
+}
 
-    <div class="note-reward">
-      <span class="reward-label">賞金</span>
-      <span class="reward-value">出金可能残高 $1,500*</span>
-    </div>
+/* TEXT */
+.note-title{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:14px;
+}
 
-  </div>
+.note-sub{
+  font-size:15px;
+  line-height:1.7;
+  margin-bottom:16px;
+}
 
-</section>
+.note-text{
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:24px;
+}
+
+/* REWARD */
+.note-reward{
+  border-top:1px dashed #ddd;
+  padding-top:18px;
+}
+
+.reward-label{
+  display:block;
+  color:#2fa84f;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.reward-value{
+  font-size:18px;
+  font-weight:700;
+}
 
  /* ================= STEPS SECTION (EXACT) ================= */
 
@@ -1046,6 +1121,7 @@ section{position:relative;}
   </div>
 
 </section>
+
 
 
 <!-- STEPS -->

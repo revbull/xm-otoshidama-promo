@@ -274,26 +274,57 @@ section{position:relative;}
     margin-top: 20px;
   }
 }
-  
-.xm-badges{display:flex;gap:8px;margin-bottom:14px}
-.xm-badge{
-  font-size:12px;
-  padding:4px 10px;
+  /* ================= QUICK NAV ================= */
+
+.xm-quick-nav{
+  background:#fff;
+  padding:40px 20px 30px;
+}
+
+.xm-quick-nav-inner{
+  max-width:1100px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.xm-quick-nav-title{
+  font-size:13px;
+  color:#888;
+  margin-bottom:14px;
+}
+
+.xm-quick-nav-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:12px;
+}
+
+.xm-quick-nav-item{
+  display:block;
+  padding:10px 6px;
+  font-size:14px;
+  color:#333;
+  border:1px solid #e0e0e0;
   border-radius:4px;
-  background:#eef1f6;
-  color:#22304a;
-  font-weight:600;
+  text-decoration:none;
+  transition:background .15s ease, color .15s ease;
 }
-.xm-badge.red{
-  background:rgba(214,40,40,.12);
-  color:var(--red);
+
+.xm-quick-nav-item:hover{
+  background:#f5f5f5;
+  color:#000;
 }
-  .xm-hero-accent{
-  width: 36px;
-  height: 2px;
-  background: var(--red);
-  margin: 14px 0 18px;
+
+/* Mobile */
+@media(max-width:900px){
+  .xm-quick-nav-grid{
+    grid-template-columns:repeat(3,1fr);
+    row-gap:10px;
+  }
 }
+
+
+
 
 /* ================= INFO SECTION (EXACT) ================= */
 
@@ -456,6 +487,39 @@ section{position:relative;}
   font-weight:700;
   border-radius:4px;
 }
+  .xm-steps-cta-wrap{
+  text-align:center;
+  margin-top:40px;
+}
+
+.xm-steps-cta{
+  display:inline-block;
+  min-width:420px;   /* 🔑 по-широк от card */
+  background:#2fa84f;
+  color:#fff;
+  padding:18px 0;
+  border-radius:4px;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.xm-steps-note{
+  margin-top:18px;
+  font-size:13px;
+  color:#666;
+  line-height:1.6;
+}
+
+.xm-steps-note a{
+  color:#d62828;
+  text-decoration:none;
+}
+@media (max-width:900px){
+  .xm-steps-cta{
+    min-width:100%;
+  }
+}
+
 
 /* Mobile */
 @media(max-width:900px){
@@ -701,7 +765,7 @@ section{position:relative;}
 }
 
 .xm-evergreen-image img{
-  max-width:120px;
+  max-width:80px;
 }
 
 .xm-evergreen-cta{
@@ -934,12 +998,45 @@ section{position:relative;}
   </div>
 </section>
 
-  <div class="xm-badges">
-  <span class="xm-badge red">期間限定</span>
-  <span class="xm-badge">15周年記念</span>
-</div>
-<div class="xm-hero-accent"></div>
+<section class="xm-quick-nav">
+  <div class="xm-quick-nav-inner">
 
+    <div class="xm-quick-nav-title">
+      クイックナビ
+    </div>
+
+    <div class="xm-quick-nav-grid">
+
+      <a href="#" onclick="goAff()" class="xm-quick-nav-item">
+        ホーム
+      </a>
+
+      <a href="#" onclick="goAff()" class="xm-quick-nav-item">
+        プロモーション
+      </a>
+
+      <a href="#" onclick="goAff()" class="xm-quick-nav-item">
+        会員ページ
+      </a>
+
+      <a href="#" onclick="goAff()" class="xm-quick-nav-item">
+        サポート
+      </a>
+
+      <a href="#" onclick="goAff()" class="xm-quick-nav-item">
+        その他のプロモーション
+      </a>
+
+      <a href="#" onclick="goAff()" class="xm-quick-nav-item">
+        FAQ
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+  
   <section class="xm-celebration">
   <div class="xm-celebration-overlay"></div>
 
@@ -1056,6 +1153,21 @@ section{position:relative;}
     </a>
 
   </div>
+  <div class="xm-steps-cta-wrap">
+  <a href="#" class="xm-steps-cta" onclick="goAff()">
+    今すぐ登録
+  </a>
+
+  <p class="xm-steps-note">
+    認証済みのXMTradingリアル口座をお持ちでない場合は、
+    <a href="#" onclick="goAff()">こちら</a>から開設いただけます。
+    <br>
+    ※または他通貨相当額。利用規約適用。
+    利用規約の全文を読むには、
+    <a href="#" onclick="goAff()">こちら</a>をクリックしてください。
+  </p>
+</div>
+
 </section>
 
 <!-- FAQ -->
@@ -1126,19 +1238,20 @@ section{position:relative;}
 <section class="xm-evergreen">
   <div class="xm-evergreen-inner">
 
+    <!-- SECTION HEADING -->
+    <h2 class="xm-evergreen-heading">
+      その他のプロモーション
+    </h2>
+
     <div class="xm-evergreen-grid">
 
       <!-- CARD 1 -->
       <div class="xm-evergreen-card">
         <div class="xm-evergreen-top">更に</div>
 
-        <div class="xm-evergreen-value red">
-          ¥15000
-        </div>
+        <div class="xm-evergreen-value red">¥15000</div>
 
-        <div class="xm-evergreen-title">
-          取引ボーナス
-        </div>
+        <div class="xm-evergreen-title">取引ボーナス</div>
 
         <div class="xm-evergreen-sub">
           相当額：105 USD, 105 EUR
@@ -1161,9 +1274,7 @@ section{position:relative;}
       <div class="xm-evergreen-card center">
         <div class="xm-evergreen-top">更に</div>
 
-        <div class="xm-evergreen-value red">
-          100%
-        </div>
+        <div class="xm-evergreen-value red">100%</div>
 
         <div class="xm-evergreen-title">
           最大$500の入金ボーナス
@@ -1171,9 +1282,7 @@ section{position:relative;}
 
         <div class="xm-evergreen-plus">＋</div>
 
-        <div class="xm-evergreen-value red">
-          20%
-        </div>
+        <div class="xm-evergreen-value red">20%</div>
 
         <div class="xm-evergreen-title">
           最大総額$10,000の入金ボーナス
@@ -1188,12 +1297,9 @@ section{position:relative;}
       <div class="xm-evergreen-card">
         <div class="xm-evergreen-top">更に</div>
 
-        <div class="XM2nd1_nobkg.png">
-          <img src="ot_img.png" alt="お年玉プロモ">
-        </div>
-
-        <div class="xm-evergreen-title red">
-          お年玉プロモ
+        <!-- IMAGE PLACEHOLDER (FIXED) -->
+        <div class="xm-evergreen-image">
+          <img src="evergreen.png" alt="お年玉プロモ">
         </div>
 
         <div class="xm-evergreen-text">
@@ -1227,7 +1333,6 @@ section{position:relative;}
   </div>
 </section>
 
-  
   <!-- RISK DISCLOSURE -->
 <footer class="xm-risk">
   <div class="xm-risk-inner">

@@ -327,78 +327,45 @@ section{position:relative;}
 
 /* ================= INFO STICKER SECTION ================= */
 
-/* ===== INFO BASE ===== */
-.xm-info{
-  position:relative;
-  padding-bottom:140px;
-}
+<section class="xm-info">
 
-/* ===== STICKER ===== */
-.xm-info-sticker{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  top:100%;
-  margin-top:-60px;
-  z-index:5;
-}
+  <!-- TOP PART (оставя се както е – с background image) -->
+  <div class="xm-info-top">
+    <h2 class="xm-info-top-title">新年の特別な贈り物</h2>
+    <p class="xm-info-top-text">
+      お年玉ボーナスで、<br>
+      2025年を最高のスタートに。
+    </p>
+  </div>
 
-.xm-info-sticker img{
-  width:130px;
-  display:block;
-  filter:drop-shadow(0 6px 14px rgba(0,0,0,.3));
-}
+  <!-- NOTE CARD -->
+  <div class="xm-info-note">
 
-/* ===== NOTE CARD ===== */
-.xm-info-note{
-  max-width:720px;
-  margin:120px auto 0;
-  background:#fff;
-  border:1px solid #e5e5e5;
-  border-radius:10px;
-  padding:40px 36px 36px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
+    <!-- STICKER -->
+    <div class="xm-info-sticker">
+      <img src="Info1.png" alt="お年玉">
+    </div>
 
-/* Text */
-.note-title{
-  font-size:22px;
-  font-weight:bold;
-  margin-bottom:14px;
-}
+    <h3 class="note-title">幸運な新年のスタートに</h3>
 
-.note-sub{
-  font-size:15px;
-  line-height:1.7;
-  margin-bottom:16px;
-}
+    <p class="note-sub">
+      2025年12月9日～30日に開催される期間限定お年玉プロモーション2025で、
+      新年を最高に幸運な年に！
+    </p>
 
-.note-text{
-  font-size:14px;
-  line-height:1.7;
-  margin-bottom:24px;
-}
+    <p class="note-text">
+      プロモーションに登録、入金して、FX、ゴールド、またはシルバーを取引すると、<br>
+      特別なお年玉を獲得するチャンス！
+    </p>
 
-/* Reward */
-.note-reward{
-  border-top:1px dashed #ddd;
-  padding-top:18px;
-}
+    <div class="note-reward">
+      <span class="reward-label">賞金</span>
+      <span class="reward-value">出金可能残高 $1,500*</span>
+    </div>
 
-.reward-label{
-  display:block;
-  color:#2fa84f;
-  font-weight:bold;
-  margin-bottom:6px;
-}
+  </div>
 
-.reward-value{
-  font-size:18px;
-  font-weight:bold;
-}
-
-
+</section>
 
  /* ================= STEPS SECTION (EXACT) ================= */
 
@@ -1042,19 +1009,22 @@ section{position:relative;}
 <!-- INFO -->
 <section class="xm-info">
 
-  <!-- TOP INFO (оставя се както е – с background image) -->
+  <!-- TOP PART (оставя се както е – с background image) -->
   <div class="xm-info-top">
-    <h2>新年の特別な贈り物</h2>
-    <p>お年玉ボーナスで、<br>2025年を最高のスタートに。</p>
-  </div>
-
-  <!-- STICKER -->
-  <div class="xm-info-sticker">
-    <img src="Info1.png" alt="お年玉">
+    <h2 class="xm-info-top-title">新年の特別な贈り物</h2>
+    <p class="xm-info-top-text">
+      お年玉ボーナスで、<br>
+      2025年を最高のスタートに。
+    </p>
   </div>
 
   <!-- NOTE CARD -->
   <div class="xm-info-note">
+
+    <!-- STICKER -->
+    <div class="xm-info-sticker">
+      <img src="Info1.png" alt="お年玉">
+    </div>
 
     <h3 class="note-title">幸運な新年のスタートに</h3>
 
@@ -1076,6 +1046,7 @@ section{position:relative;}
   </div>
 
 </section>
+
 
 <!-- STEPS -->
 <section class="xm-steps-exact">

@@ -178,6 +178,32 @@ section{position:relative;}
   text-align: center;
   margin-left: -10px; /* леко „вкарване“ към текста */
 }
+  .xm-hero-bg-inner{
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.xm-hero-content{
+  max-width: 520px;
+  position: relative;
+  z-index: 4;
+}
+@media (max-width: 900px){
+  .xm-hero-bg-inner{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .xm-hero-visual{
+    max-width: 220px;
+  }
+}
+
 
 .xm-hero-image img{
   width: 220px; /* по-малък размер */
@@ -443,6 +469,19 @@ section{position:relative;}
   max-height: 500px;
   padding: 22px;
 }
+  .xm-hero-visual{
+  flex: 0 0 300px;
+  position: relative;
+  z-index: 3;
+}
+
+.xm-hero-visual img{
+  width: 100%;
+  filter:
+    drop-shadow(0 40px 50px rgba(0,0,0,.45))
+    drop-shadow(0 10px 20px rgba(0,0,0,.35));
+}
+
 
   /* ================= EVERGREEN ================= */
 .xm-steps{background:var(--bg);}
@@ -749,26 +788,30 @@ section{position:relative;}
 
 
 <!-- HERO -->
-<section class="xm-hero">
-  <div class="xm-hero-inner">
+<section class="xm-hero-bg">
+  <div class="xm-hero-bg-overlay"></div>
 
-    <div class="xm-hero-text">
-      <div class="xm-hero-label">お年玉プロモーション</div>
+  <div class="xm-hero-bg-inner">
 
-      <h1 class="xm-hero-title">
-        賞金総額$150,000の獲得チャンス！
+    <div class="xm-hero-visual">
+      <img src="XM1st..png" alt="Otoshidama">
+    </div>
+
+    <div class="xm-hero-content">
+      <span class="xm-badge red">期間限定</span>
+
+      <h1>
+        賞金総額<br>
+        <strong>$150,000</strong> の獲得チャンス
       </h1>
 
-      <p class="xm-hero-subtitle">
-        XMTrading 15周年記念キャンペーン
-      </p>
-
-      <p class="xm-hero-desc">
-        100名様に出金可能残高$1,500をプレゼント
+      <p class="xm-hero-sub">
+        XMTrading 15周年記念<br>
+        お年玉プロモーション
       </p>
 
       <a href="#" class="xm-hero-cta" onclick="goAff()">
-        今すぐ口座を開設してキャンペーンに参加
+        今すぐ口座を開設して参加
       </a>
 
       <p class="xm-hero-note">
@@ -777,13 +820,9 @@ section{position:relative;}
       </p>
     </div>
 
-    <div class="xm-hero-image">
-      <img src="XM1st1.png" alt="Otoshidama">
-    </div>
-
   </div>
-  
 </section>
+
   <div class="xm-badges">
   <span class="xm-badge red">期間限定</span>
   <span class="xm-badge">15周年記念</span>

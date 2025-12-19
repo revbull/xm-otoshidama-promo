@@ -89,30 +89,372 @@ a{text-decoration:none;color:inherit}
   padding-top:16px;
   font-weight:bold;
 }
+  .xm-info-list{
+  list-style:none;
+  padding:0;
+  margin-top:18px;
+}
+
+.xm-info-list li{
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:6px;
+  padding-left:18px;
+  position:relative;
+}
+
+.xm-info-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#2fa84f;
+  font-weight:bold;
+}
+
+  /* ===== STEPS ===== */
+.xm-steps{
+  background:#fff;
+  padding:100px 20px;
+}
+
+.xm-steps-inner{
+  max-width:1100px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.xm-steps-title{
+  font-size:30px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.xm-steps-subtitle{
+  font-size:15px;
+  color:#666;
+  margin-bottom:50px;
+}
+
+.xm-steps-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  margin-bottom:50px;
+}
+
+.xm-step-card{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:14px;
+  padding:50px 24px 40px;
+  position:relative;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.xm-step-number{
+  position:absolute;
+  top:-20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#d62828;
+  color:#fff;
+  font-weight:700;
+  line-height:40px;
+}
+
+.xm-step-image{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:18px;
+}
+
+.xm-step-image img{
+  max-height:56px;
+}
+
+.xm-step-text{
+  font-size:15px;
+  line-height:1.6;
+}
+
+.xm-steps-cta{
+  display:inline-block;
+  min-width:320px;
+  background:#2fa84f;
+  color:#fff;
+  padding:16px 0;
+  border-radius:4px;
+  font-size:17px;
+  font-weight:bold;
+}
+
+.xm-steps-note{
+  margin-top:16px;
+  font-size:13px;
+  color:#666;
+}
+
+.xm-steps-note a{
+  color:#d62828;
+  text-decoration:none;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .xm-steps-grid{
+    grid-template-columns:1fr;
+  }
+  .xm-steps-cta{
+    width:100%;
+  }
+}
+
 
 /* ===== FAQ ===== */
-.xm-faq{padding:100px 20px;background:#fff;}
-.xm-faq-inner{max-width:900px;margin:auto;}
-.xm-faq-item{border:1px solid #e5e5e5;margin-bottom:16px;}
-.xm-faq-question{
-  width:100%;padding:18px;
-  background:#fafafa;border:none;
-  font-weight:bold;cursor:pointer;
-}
-.xm-faq-answer{
-  max-height:0;overflow:hidden;
-  padding:0 18px;
-  transition:.3s;
-}
-.xm-faq-item.active .xm-faq-answer{
-  max-height:400px;padding:18px;
+/* ===== FAQ ===== */
+.xm-faq{
+  background:#fff;
+  padding:100px 20px;
 }
 
-/* ===== RISK ===== */
-.xm-risk{background:#111;padding:30px 20px;}
-.xm-risk p{font-size:12px;color:#aaa;text-align:center;}
-</style>
-</head>
+.xm-faq-inner{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.xm-faq-title{
+  text-align:center;
+  font-size:30px;
+  font-weight:700;
+  margin-bottom:50px;
+}
+
+.xm-faq-item{
+  border:1px solid #e5e5e5;
+  border-left:4px solid #ccc;
+  border-radius:4px;
+  margin-bottom:18px;
+  overflow:hidden;
+  transition:border-left-color .2s ease;
+}
+
+.xm-faq-item.active{
+  border-left-color:#d62828;
+}
+
+.xm-faq-question{
+  width:100%;
+  padding:22px 26px;
+  font-size:16px;
+  font-weight:600;
+  background:#fafafa;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:left;
+}
+
+.xm-faq-arrow{
+  width:14px;
+  height:14px;
+  border-right:3px solid #d62828;
+  border-bottom:3px solid #d62828;
+  transform:rotate(45deg); /* closed */
+  transition:transform .25s ease;
+  margin-left:20px;
+}
+
+.xm-faq-item.active .xm-faq-arrow{
+  transform:rotate(-135deg); /* open */
+}
+
+.xm-faq-answer{
+  max-height:0;
+  overflow:hidden;
+  padding:0 26px;
+  font-size:15px;
+  line-height:1.9;
+  background:#fff;
+  transition:max-height .35s ease, padding .35s ease;
+}
+
+.xm-faq-item.active .xm-faq-answer{
+  max-height:600px;
+  padding:24px 26px 28px;
+}
+  /* ===== EVERGREEN ===== */
+.xm-evergreen{
+  background:#fff;
+  padding:120px 20px;
+}
+
+.xm-evergreen-inner{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.xm-evergreen-title{
+  text-align:center;
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:60px;
+}
+
+.xm-evergreen-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.xm-evergreen-card{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:14px;
+  padding:36px 28px 40px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 8px 22px rgba(0,0,0,.06);
+}
+
+.xm-evergreen-head{
+  text-align:center;
+  font-size:13px;
+  color:#999;
+  margin-bottom:12px;
+}
+
+.xm-evergreen-value{
+  text-align:center;
+  font-size:46px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.xm-evergreen-value.small{
+  font-size:40px;
+}
+
+.xm-evergreen-value.red{
+  color:#d62828;
+}
+
+.xm-evergreen-label{
+  text-align:center;
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.xm-evergreen-sub{
+  text-align:center;
+  font-size:13px;
+  color:#555;
+  margin-bottom:20px;
+}
+
+.xm-evergreen-plus{
+  text-align:center;
+  font-size:32px;
+  color:#bbb;
+  margin:8px 0;
+}
+
+.xm-evergreen-image{
+  text-align:center;
+  margin-bottom:16px;
+}
+
+.xm-evergreen-image img{
+  max-width:90px;
+}
+
+.xm-evergreen-text{
+  text-align:center;
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.xm-evergreen-desc{
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:16px;
+}
+
+.xm-evergreen-list{
+  list-style:none;
+  padding:0;
+  margin-bottom:18px;
+}
+
+.xm-evergreen-list li{
+  font-size:14px;
+  margin-bottom:6px;
+  padding-left:18px;
+  position:relative;
+}
+
+.xm-evergreen-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#2fa84f;
+  font-weight:700;
+}
+
+.xm-evergreen-note{
+  font-size:12px;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.xm-evergreen-cta{
+  margin-top:auto;
+  background:#2fa84f;
+  color:#fff;
+  padding:14px 0;
+  text-align:center;
+  font-weight:700;
+  border-radius:4px;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .xm-evergreen-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== RISK DISCLOSURE ===== */
+.xm-risk{
+  background:#111;
+  padding:28px 20px;
+}
+
+.xm-risk-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.xm-risk p{
+  font-size:12px;
+  line-height:1.6;
+  color:#aaa;
+  text-align:center;
+}
+
+.xm-risk a{
+  color:#ccc;
+  text-decoration:underline;
+}
+
 
 <body>
 
@@ -132,36 +474,253 @@ a{text-decoration:none;color:inherit}
 
 <section class="xm-info">
   <div class="xm-info-note">
-    <img src="Info1.png">
-    <h3 class="note-title">幸運な新年のスタートに</h3>
-    <p class="note-text">
-      プロモーションに登録、入金して取引すると<br>
-      特別なお年玉を獲得するチャンス！
+
+  <div class="xm-info-sticker">
+    <img src="Info1.png" alt="お年玉">
+  </div>
+
+  <h3 class="note-title">幸運な新年のスタートに</h3>
+
+  <p class="note-text">
+    期間限定お年玉プロモーション2025に参加して、<br>
+    出金可能残高 <strong>$1,500</strong> を獲得するチャンス。
+  </p>
+
+  <ul class="xm-info-list">
+    <li>当選者：100名様</li>
+    <li>新規・既存のお客様が対象</li>
+    <li>キャンペーン期間：2025年12月9日〜30日</li>
+  </ul>
+
+</div>
+
+  </div>
+</section>
+  <section class="xm-steps">
+  <div class="xm-steps-inner">
+
+    <h2 class="xm-steps-title">新しい年、新たなチャンス</h2>
+    <p class="xm-steps-subtitle">
+      以下の簡単な手順でプロモーションにご参加いただけます
     </p>
-    <div class="note-reward">
-      出金可能残高 $1,500*
+
+    <div class="xm-steps-grid">
+
+      <!-- STEP 1 -->
+      <div class="xm-step-card">
+        <div class="xm-step-number">1</div>
+        <div class="xm-step-image">
+          <img src="step1.png" alt="Step 1">
+        </div>
+        <p class="xm-step-text">
+          認証済みのリアル口座で登録する
+        </p>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="xm-step-card">
+        <div class="xm-step-number">2</div>
+        <div class="xm-step-image">
+          <img src="step2.png" alt="Step 2">
+        </div>
+        <p class="xm-step-text">
+          最低$200の入金を行う
+        </p>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="xm-step-card">
+        <div class="xm-step-number">3</div>
+        <div class="xm-step-image">
+          <img src="step3.png" alt="Step 3">
+        </div>
+        <p class="xm-step-text">
+          FX・ゴールド・シルバーを取引する
+        </p>
+      </div>
+
     </div>
+
+    <a href="#" class="xm-steps-cta" onclick="goAff()">
+      今すぐ登録
+    </a>
+
+    <p class="xm-steps-note">
+      認証済みのXMTradingリアル口座をお持ちでない場合は
+      <a href="#" onclick="goAff()">こちら</a>から開設いただけます。<br>
+      ※ 利用規約が適用されます
+    </p>
+
   </div>
 </section>
 
 <section class="xm-faq">
   <div class="xm-faq-inner">
+
+    <h2 class="xm-faq-title">よくあるご質問</h2>
+
+    <!-- Q1 -->
     <div class="xm-faq-item">
-      <button class="xm-faq-question">誰が参加できますか？</button>
-      <div class="xm-faq-answer">認証済みXMTradingリアル口座保有者。</div>
+      <button class="xm-faq-question">
+        <span>誰がこのプロモーションに参加できますか？</span>
+        <span class="xm-faq-arrow"></span>
+      </button>
+      <div class="xm-faq-answer">
+        本プロモーションは、認証済みXMTradingリアル口座
+        （Standard口座、Micro口座、Zero口座、KIWAMI極口座、
+        投資家口座、ストラテジーマネージャー口座を含む）
+        を保有する新規および既存のお客様が対象です。
+      </div>
     </div>
+
+    <!-- Q2 -->
+    <div class="xm-faq-item">
+      <button class="xm-faq-question">
+        <span>参加方法は？</span>
+        <span class="xm-faq-arrow"></span>
+      </button>
+      <div class="xm-faq-answer">
+        認証済みリアル口座で本プロモーションに登録後、
+        最低$200（または他通貨相当額）をご入金ください。
+        その後、2025年12月9日〜30日の期間中に
+        FX、ゴールド、またはシルバーを
+        往復2スタンダードロット以上お取引ください。
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="xm-faq-item">
+      <button class="xm-faq-question">
+        <span>当選者は何名ですか？</span>
+        <span class="xm-faq-arrow"></span>
+      </button>
+      <div class="xm-faq-answer">
+        条件を満たした全てのお客様の中から、
+        合計100名の当選者が無作為に抽選されます。
+        各当選者様には、出金可能残高$1,500
+        （または他通貨相当額）が付与されます。
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="xm-faq-item">
+      <button class="xm-faq-question">
+        <span>当選者はいつ発表されますか？</span>
+        <span class="xm-faq-arrow"></span>
+      </button>
+      <div class="xm-faq-answer">
+        当選者様には、2026年1月8日に
+        登録されたメールアドレス宛に
+        ご案内いたします。
+      </div>
+    </div>
+
   </div>
 </section>
 
-<footer class="xm-risk">
-  <p>リスク警告： 投資元本を失うリスクが伴います。</p>
+  <section class="xm-evergreen">
+  <div class="xm-evergreen-inner">
+
+    <h2 class="xm-evergreen-title">その他のプロモーション</h2>
+
+    <div class="xm-evergreen-grid">
+
+      <!-- CARD 1 -->
+      <div class="xm-evergreen-card">
+        <div class="xm-evergreen-head">更に</div>
+
+        <div class="xm-evergreen-value red">¥15,000</div>
+        <div class="xm-evergreen-label">取引ボーナス</div>
+        <div class="xm-evergreen-sub">相当額：105 USD / 105 EUR</div>
+
+        <ul class="xm-evergreen-list">
+          <li>ご入金不要</li>
+          <li>お客様の取引口座に自動的に反映</li>
+          <li>出金できないボーナス</li>
+          <li>全利益が出金対象</li>
+          <li>新規のお客様が対象</li>
+        </ul>
+
+        <a href="#" class="xm-evergreen-cta" onclick="goAff()">
+          口座を開設する
+        </a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="xm-evergreen-card">
+        <div class="xm-evergreen-head">更に</div>
+
+        <div class="xm-evergreen-value red">100%</div>
+        <div class="xm-evergreen-label">最大$500の入金ボーナス</div>
+
+        <div class="xm-evergreen-plus">＋</div>
+
+        <div class="xm-evergreen-value red small">20%</div>
+        <div class="xm-evergreen-label">
+          最大総額$10,000の入金ボーナス
+        </div>
+
+        <a href="#" class="xm-evergreen-cta" onclick="goAff()">
+          口座を開設する
+        </a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="xm-evergreen-card">
+        <div class="xm-evergreen-head">更に</div>
+
+        <div class="xm-evergreen-image">
+          <img src="evergreen.png" alt="お年玉プロモ">
+        </div>
+
+        <div class="xm-evergreen-text">
+          新年を祝して賞金総額$150,000！
+        </div>
+
+        <p class="xm-evergreen-desc">
+          15周年を記念した総額$150,000の賞金で、
+          幸運な2026年を迎えよう！
+          お年玉プロモーションに参加して、
+          $1,500の出金可能残高を手に入れるチャンス。
+        </p>
+
+        <ul class="xm-evergreen-list">
+          <li>新規・既存のお客様が対象</li>
+          <li>当選者は100名様</li>
+          <li>2025年12月9日〜30日</li>
+        </ul>
+
+        <p class="xm-evergreen-note">※ 利用規約適用</p>
+
+        <a href="#" class="xm-evergreen-cta" onclick="goAff()">
+          口座開設
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+ 
+  <footer class="xm-risk">
+  <div class="xm-risk-inner">
+    <p>
+      リスク警告： 投資元本を失うリスクが伴います。
+      レバレッジ商品は、全てのお客様に適しているわけではございません。
+      <a href="#" target="_blank">Tradexfinのリスク開示</a>および
+      <a href="#" target="_blank">Fintradeのリスク開示</a>を熟読ください。
+    </p>
+  </div>
 </footer>
 
 <script>
 document.querySelectorAll(".xm-faq-question").forEach(btn=>{
-  btn.onclick=()=>btn.parentElement.classList.toggle("active");
+  btn.addEventListener("click", ()=>{
+    btn.parentElement.classList.toggle("active");
+  });
 });
 </script>
+
 
 </body>
 </html>

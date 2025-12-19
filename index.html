@@ -810,10 +810,15 @@ a{text-decoration:none;color:inherit}
 <script>
 document.querySelectorAll(".xm-faq-question").forEach(btn=>{
   btn.addEventListener("click", ()=>{
-    btn.parentElement.classList.toggle("active");
+    btn.closest(".xm-faq-item").classList.toggle("active");
   });
 });
+
+function goAff(){
+  window.open("https://clicks.affstrack.com/c?c=1120254&l=ja&p=0","_blank");
+}
 </script>
+
 
 
 </body>

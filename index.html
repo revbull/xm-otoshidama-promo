@@ -295,216 +295,255 @@ section{position:relative;}
   margin: 14px 0 18px;
 }
 
+/* ================= INFO SECTION (EXACT) ================= */
 
-/* ================= INFO ================= */
-.xm-info{background:var(--white);}
-.xm-faq{background:var(--white);}
-.xm-info-desc{color:var(--muted);}
-
-  .xm-info {
+.xm-info-exact{
   background: #fff;
-  padding: 100px 20px;
+  padding: 120px 20px;
 }
 
-.xm-info-inner {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  gap: 70px;
-}
-
-.xm-info-visual {
-  flex: 0 0 260px;
+.xm-info-exact-inner{
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.xm-info-visual img {
-  width: 220px;
-  filter:
-    drop-shadow(0 25px 30px rgba(214,40,40,0.25))
-    drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+.xm-info-title{
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
 }
 
-.xm-info-text {
-  flex: 1;
+.xm-info-text{
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 14px;
+  color: #111;
 }
 
-.xm-info-title {
-  font-size: 32px;
-  margin-bottom: 18px;
+.xm-info-image{
+  margin: 50px 0 40px;
 }
 
-.xm-info-desc {
+.xm-info-image img{
+  width: 160px;
+  max-width: 100%;
+}
+
+.xm-info-reward{
   font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 26px;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
-.xm-info-desc strong {
+.xm-info-reward span{
   color: #d62828;
+  font-weight: 700;
 }
 
-.xm-info-list {
-  list-style: none;
-  padding: 0;
+.xm-info-reward strong{
+  font-size: 22px;
 }
 
-.xm-info-list li {
-  margin-bottom: 10px;
-  padding-left: 22px;
-  position: relative;
-}
-
-.xm-info-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #2fa84f;
-  font-weight: bold;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .xm-info-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .xm-info-visual {
-    margin-bottom: 30px;
-  }
-}
-
-/* ================= STEPS ================= */
-.xm-steps {
-  background: #f7f7f7;
-  padding: 90px 20px;
-}
-
-.xm-steps-inner {
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
-}
-
-.xm-steps-title {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.xm-steps-subtitle {
-  font-size: 16px;
-  opacity: 0.75;
-  margin-bottom: 60px;
-}
-
-.xm-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-bottom: 50px;
-}
-
-.xm-step {
-  background: #fff;
-  border-radius: 16px;
-  padding: 50px 20px 40px;
-  position: relative;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-}
-
-.xm-step-number {
-  position: absolute;
-  top: -22px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #d62828;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 44px;
-}
-
-.xm-step-icon img {
-  width: 56px;
+.xm-info-meta{
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
-.xm-step-text {
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.xm-steps-cta {
-  display: inline-block;
-  background: #2fa84f;
-  color: #fff;
-  padding: 16px 50px;
-  border-radius: 4px;
-  font-size: 18px;
-  font-weight: bold;
+.xm-info-note{
+  font-size: 12px;
+  color: #666;
 }
 
 /* Mobile */
-@media (max-width: 900px) {
-  .xm-steps-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 900px){
+  .xm-info-exact{
+    padding: 80px 20px;
+  }
+
+  .xm-info-title{
+    font-size: 24px;
+  }
+}
+
+
+
+
+ /* ================= STEPS SECTION (EXACT) ================= */
+
+.xm-steps-exact{
+  background:#fff;
+  padding:120px 20px;
+}
+
+.xm-steps-bg{
+  max-width:1200px;
+  margin:0 auto;
+  background:linear-gradient(135deg,#c9a57a,#b48a62);
+  border-radius:22px;
+  padding:80px 40px 90px;
+  text-align:center;
+}
+
+.xm-steps-title{
+  font-size:30px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:12px;
+}
+
+.xm-steps-subtitle{
+  font-size:15px;
+  color:rgba(255,255,255,.85);
+  margin-bottom:60px;
+}
+
+.xm-steps-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  margin-bottom:60px;
+}
+
+.xm-step-card{
+  background:#fff;
+  border-radius:14px;
+  padding:55px 25px 40px;
+  position:relative;
+  box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.xm-step-number{
+  position:absolute;
+  top:-22px;
+  left:50%;
+  transform:translateX(-50%);
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#d62828;
+  color:#fff;
+  font-weight:700;
+  font-size:18px;
+  line-height:44px;
+}
+
+.xm-step-image{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.xm-step-image img{
+  max-height:60px;
+  max-width:100%;
+}
+
+.xm-step-text{
+  font-size:15px;
+  line-height:1.7;
+  color:#111;
+}
+
+.xm-steps-cta{
+  display:inline-block;
+  background:#2fa84f;
+  color:#fff;
+  padding:18px 60px;
+  font-size:17px;
+  font-weight:700;
+  border-radius:4px;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .xm-steps-bg{
+    padding:60px 20px 70px;
+  }
+
+  .xm-steps-cards{
+    grid-template-columns:1fr;
   }
 }
 
 /* ================= FAQ ================= */
-.xm-faq {
-  background: #fff;
-  padding: 100px 20px;
+/* ================= FAQ (XM 1:1) ================= */
+
+.xm-faq{
+  background:#fff;
+  padding:100px 20px;
 }
 
-.xm-faq-inner {
-  max-width: 900px;
-  margin: auto;
+.xm-faq-inner{
+  max-width:900px;
+  margin:0 auto;
 }
 
-.xm-faq-title {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 50px;
+.xm-faq-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:50px;
 }
 
-.xm-faq-item {
-  border: 1px solid #e0e0e0;
-  border-left: 4px solid #d62828;
-  border-radius: 4px;
-  margin-bottom: 18px;
-  overflow: hidden;
+.xm-faq-item{
+  border:1px solid #e5e5e5;
+  border-left:4px solid #ccc; /* inactive */
+  border-radius:4px;
+  margin-bottom:18px;
+  overflow:hidden;
+  transition:border-left-color .2s ease;
 }
 
-.xm-faq-question {
-  width: 100%;
-  padding: 20px 22px;
-  font-size: 16px;
-  font-weight: bold;
-  background: #fafafa;
-  border: none;
-  cursor: pointer;
-  text-align: left;
+.xm-faq-item.active{
+  border-left-color:#d62828; /* active red */
 }
 
-.xm-faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 22px;
-  font-size: 15px;
-  line-height: 1.7;
-  transition: max-height .35s ease, padding .35s ease;
+.xm-faq-question{
+  width:100%;
+  padding:22px 26px;
+  font-size:16px;
+  font-weight:600;
+  background:#fafafa;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:left;
 }
 
-.xm-faq-item.active .xm-faq-answer {
-  max-height: 500px;
-  padding: 22px;
+.xm-faq-arrow{
+  width:14px;
+  height:14px;
+  border-right:3px solid #d62828;
+  border-bottom:3px solid #d62828;
+  transform:rotate(45deg); /* closed */
+  transition:transform .25s ease;
+  margin-left:20px;
 }
+
+.xm-faq-item.active .xm-faq-arrow{
+  transform:rotate(-135deg); /* open (▲) */
+}
+
+.xm-faq-answer{
+  max-height:0;
+  overflow:hidden;
+  padding:0 26px;
+  font-size:15px;
+  line-height:1.9;
+  color:#111;
+  background:#fff;
+  transition:max-height .35s ease, padding .35s ease;
+}
+
+.xm-faq-item.active .xm-faq-answer{
+  max-height:600px;
+  padding:24px 26px 28px;
+}
+
   .xm-hero-visual{
   flex: 0 0 300px;
   position: relative;
@@ -520,124 +559,150 @@ section{position:relative;}
 
 
   /* ================= EVERGREEN ================= */
-.xm-steps{background:var(--bg);}
-.xm-evergreen{background:var(--bg);}
+/* ================= EVERGREEN PROMO (1:1) ================= */
 
-  .xm-evergreen {
-  background: #f6f7f9;
-  padding: 100px 20px;
+.xm-evergreen{
+  background:#fff;
+  padding:120px 20px;
 }
 
-.xm-evergreen-inner {
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
+.xm-evergreen-inner{
+  max-width:1200px;
+  margin:0 auto;
 }
 
-.xm-evergreen-label {
-  font-size: 14px;
-  opacity: 0.6;
-  margin-bottom: 10px;
+.xm-evergreen-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
 }
 
-.xm-evergreen-title {
-  font-size: 32px;
-  margin-bottom: 18px;
+.xm-evergreen-card{
+  padding:30px 25px 40px;
+  border-right:1px solid #e5e5e5;
 }
 
-.xm-evergreen-desc {
-  font-size: 16px;
-  opacity: 0.75;
-  margin-bottom: 50px;
+.xm-evergreen-card:last-child{
+  border-right:none;
 }
 
-.xm-evergreen-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+.xm-evergreen-top{
+  text-align:center;
+  font-size:13px;
+  color:#999;
+  margin-bottom:14px;
 }
 
-.xm-evergreen-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 40px 30px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  position: relative;
+.xm-evergreen-value{
+  text-align:center;
+  font-size:52px;
+  font-weight:700;
+  margin-bottom:10px;
 }
 
-.xm-evergreen-card.highlight {
-  border: 2px solid #2fa84f;
+.xm-evergreen-value.red{
+  color:#d62828;
 }
 
-.xm-evergreen-badge {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #d62828;
-  color: #fff;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 20px;
+.xm-evergreen-title{
+  text-align:center;
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:8px;
 }
 
-.xm-evergreen-amount {
-  font-size: 38px;
-  color: #d62828;
-  margin-bottom: 10px;
+.xm-evergreen-title.red{
+  color:#d62828;
 }
 
-.xm-evergreen-head {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 18px;
+.xm-evergreen-sub{
+  text-align:center;
+  font-size:13px;
+  margin-bottom:20px;
 }
 
-.xm-evergreen-sub {
-  font-size: 15px;
-  margin-bottom: 25px;
+.xm-evergreen-plus{
+  text-align:center;
+  font-size:36px;
+  color:#bbb;
+  margin:10px 0;
 }
 
-.xm-evergreen-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 30px;
-  text-align: left;
+.xm-evergreen-text{
+  text-align:center;
+  font-size:15px;
+  margin-bottom:14px;
 }
 
-.xm-evergreen-list li {
-  margin-bottom: 10px;
-  padding-left: 22px;
-  position: relative;
+.xm-evergreen-desc{
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:18px;
 }
 
-.xm-evergreen-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #2fa84f;
-  font-weight: bold;
+.xm-evergreen-list{
+  list-style:none;
+  padding:0;
+  margin-bottom:20px;
 }
 
-.xm-evergreen-cta {
-  display: inline-block;
-  background: #2fa84f;
-  color: #fff;
-  padding: 14px 36px;
-  border-radius: 4px;
-  font-weight: bold;
+.xm-evergreen-list li{
+  font-size:14px;
+  margin-bottom:8px;
+  padding-left:18px;
+  position:relative;
 }
 
-.xm-evergreen-note {
-  font-size: 13px;
-  opacity: 0.6;
-  margin-top: 20px;
+.xm-evergreen-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#2fa84f;
+  font-weight:700;
 }
 
-@media (max-width: 900px) {
-  .xm-evergreen-grid {
-    grid-template-columns: 1fr;
+.xm-evergreen-note{
+  font-size:12px;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.xm-evergreen-image{
+  text-align:center;
+  margin-bottom:16px;
+}
+
+.xm-evergreen-image img{
+  max-width:120px;
+}
+
+.xm-evergreen-cta{
+  display:block;
+  margin-top:20px;
+  background:#2fa84f;
+  color:#fff;
+  padding:14px 0;
+  text-align:center;
+  font-weight:700;
+  border-radius:4px;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .xm-evergreen-grid{
+    grid-template-columns:1fr;
+  }
+
+  .xm-evergreen-card{
+    border-right:none;
+    border-bottom:1px solid #e5e5e5;
+  }
+
+  .xm-evergreen-card:last-child{
+    border-bottom:none;
   }
 }
+
   /* ================= RISK DISCLOSURE ================= */
 .xm-risk {
   background: #111;
@@ -871,93 +936,120 @@ section{position:relative;}
   
 
 <!-- INFO -->
-<section class="xm-info">
-  <div class="xm-info-inner">
+<section class="xm-info-exact">
+  <div class="xm-info-exact-inner">
 
-    <div class="xm-info-visual">
-      <img src="otoshidama-icon.png" alt="Otoshidama">
+    <h2 class="xm-info-title">
+      幸運な新年のスタートに
+    </h2>
+
+    <p class="xm-info-text">
+      2025年12月9日〜30日に開催される期間限定お年玉プロモーション2025で、
+      新年を最高に幸運な年に！
+    </p>
+
+    <p class="xm-info-text">
+      プロモーションに登録、入金して、FX、ゴールド、またはシルバーを取引すると、
+      特別なお年玉を獲得するチャンス！
+    </p>
+
+    <div class="xm-info-image">
+      <img src="ot_img.png" alt="お年玉">
     </div>
 
-    <div class="xm-info-text">
-      <h2 class="xm-info-title">
-        幸運な新年のスタートに
-      </h2>
+    <p class="xm-info-reward">
+      <span>賞金</span><br>
+      出金可能残高 <strong>$1,500*</strong>
+    </p>
 
-      <p class="xm-info-desc">
-        期間限定お年玉プロモーション2025に参加して、
-        出金可能残高 <strong>$1,500</strong> を獲得するチャンス。
-      </p>
+    <p class="xm-info-meta">
+      当選者：100名様
+    </p>
 
-      <ul class="xm-info-list">
-        <li>当選者：100名様</li>
-        <li>新規・既存のお客様が対象</li>
-        <li>キャンペーン期間：2025年12月9日〜30日</li>
-      </ul>
-    </div>
+    <p class="xm-info-note">
+      *賞金は、お客様の取引口座の基本通貨に換算して付与されます。
+    </p>
 
   </div>
 </section>
+
 
 
 <!-- STEPS -->
-<section class="xm-steps">
-  <div class="xm-steps-inner">
+<section class="xm-steps-exact">
+  <div class="xm-steps-bg">
 
-    <h2 class="xm-steps-title">新しい年、新たなチャンス</h2>
+    <h2 class="xm-steps-title">
+      新しい年、新たなチャンス
+    </h2>
+
     <p class="xm-steps-subtitle">
-      以下の簡単な手順でお年玉プロモーションに参加できます
+      以下の簡単な手順でプロモーションにご参加いただけます：
     </p>
 
-    <div class="xm-steps-grid">
+    <div class="xm-steps-cards">
 
-      <div class="xm-step">
+      <!-- STEP 1 -->
+      <div class="xm-step-card">
         <div class="xm-step-number">1</div>
-        <div class="xm-step-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="">
+
+        <div class="xm-step-image">
+          <img src="step1.png" alt="Step 1">
         </div>
+
         <p class="xm-step-text">
-          認証済みの<br>リアル口座を開設
+          認証済みのリアル口座で登録する。
         </p>
       </div>
 
-      <div class="xm-step">
+      <!-- STEP 2 -->
+      <div class="xm-step-card">
         <div class="xm-step-number">2</div>
-        <div class="xm-step-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="">
+
+        <div class="xm-step-image">
+          <img src="step2.png" alt="Step 2">
         </div>
+
         <p class="xm-step-text">
-          最低$200を<br>ご入金
+          最低$200の入金を行う。
         </p>
       </div>
 
-      <div class="xm-step">
+      <!-- STEP 3 -->
+      <div class="xm-step-card">
         <div class="xm-step-number">3</div>
-        <div class="xm-step-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="">
+
+        <div class="xm-step-image">
+          <img src="step3.png" alt="Step 3">
         </div>
+
         <p class="xm-step-text">
-          FX・ゴールド・<br>シルバーを取引
+          FX、ゴールド、またはシルバーを
+          往復2スタンダードロット以上取引する。
         </p>
       </div>
 
     </div>
 
-    <a href="#" class="xm-steps-cta">今すぐ登録</a>
+    <a href="#" class="xm-steps-cta" onclick="goAff()">
+      今すぐ登録
+    </a>
 
   </div>
 </section>
 
-
 <!-- FAQ -->
-<section class="xm-faq">
+
+ <section class="xm-faq">
   <div class="xm-faq-inner">
 
     <h2 class="xm-faq-title">よくあるご質問</h2>
 
-    <!-- Q1 -->
+    <!-- FAQ ITEM -->
     <div class="xm-faq-item">
       <button class="xm-faq-question">
-        誰がこのプロモーションに参加できますか？
+        <span>誰がこのプロモーションに参加できますか？</span>
+        <span class="xm-faq-arrow"></span>
       </button>
       <div class="xm-faq-answer">
         本プロモーションは、認証済みXMTradingリアル口座
@@ -967,39 +1059,37 @@ section{position:relative;}
       </div>
     </div>
 
-    <!-- Q2 -->
     <div class="xm-faq-item">
       <button class="xm-faq-question">
-        参加方法は？
+        <span>参加方法は？</span>
+        <span class="xm-faq-arrow"></span>
       </button>
       <div class="xm-faq-answer">
-        抽選に参加するには、まず認証済みのXMTradingリアル口座で
-        本プロモーションに登録してください。
-        次に、最低$200（または他通貨相当額）をご入金の上、
-        2025年12月9日〜30日の期間中にFX、ゴールド、
-        またはシルバーを往復2スタンダードロット
-        （または往復200マイクロロット）以上お取引ください。
+        認証済みリアル口座で本プロモーションに登録後、
+        最低$200（または他通貨相当額）をご入金ください。
+        その後、2025年12月9日〜30日の期間中に
+        FX、ゴールド、またはシルバーを
+        往復2スタンダードロット以上お取引ください。
       </div>
     </div>
 
-    <!-- Q3 -->
     <div class="xm-faq-item">
       <button class="xm-faq-question">
-        プロモーションの当選者は何名ですか？
+        <span>当選者は何名ですか？</span>
+        <span class="xm-faq-arrow"></span>
       </button>
       <div class="xm-faq-answer">
-        プロモーションにエントリーし、要件を満たした
-        全てのお客様の中から、合計100名の当選者が
-        無作為に抽選されます。
+        条件を満たした全てのお客様の中から、
+        合計100名の当選者が無作為に抽選されます。
         各当選者様には、出金可能残高$1,500
         （または他通貨相当額）が付与されます。
       </div>
     </div>
 
-    <!-- Q4 -->
     <div class="xm-faq-item">
       <button class="xm-faq-question">
-        当選者はいつ発表されますか？
+        <span>当選者はいつ発表されますか？</span>
+        <span class="xm-faq-arrow"></span>
       </button>
       <div class="xm-faq-answer">
         当選者様には、2026年1月8日に
@@ -1010,58 +1100,113 @@ section{position:relative;}
 
   </div>
 </section>
+
   <!-- EVERGREEN PROMOTION -->
+  
 <section class="xm-evergreen">
   <div class="xm-evergreen-inner">
 
-    <p class="xm-evergreen-label">さらに</p>
-
-    <h2 class="xm-evergreen-title">
-      年間を通して受け取れる<br>
-      常設プロモーション
-    </h2>
-
-    <p class="xm-evergreen-desc">
-      お年玉プロモーションに参加できない場合でも、
-      以下の特典はいつでもご利用いただけます。
-    </p>
-
     <div class="xm-evergreen-grid">
 
+      <!-- CARD 1 -->
       <div class="xm-evergreen-card">
-        <div class="xm-evergreen-badge">入金不要</div>
-        <h3 class="xm-evergreen-amount">¥15,000</h3>
-        <p class="xm-evergreen-head">取引ボーナス</p>
+        <div class="xm-evergreen-top">更に</div>
+
+        <div class="xm-evergreen-value red">
+          ¥15000
+        </div>
+
+        <div class="xm-evergreen-title">
+          取引ボーナス
+        </div>
+
+        <div class="xm-evergreen-sub">
+          相当額：105 USD, 105 EUR
+        </div>
 
         <ul class="xm-evergreen-list">
+          <li>ご入金不要</li>
+          <li>お客様の取引口座に自動的に反映</li>
+          <li>出金できないボーナス</li>
+          <li>全利益が出金対象</li>
           <li>新規のお客様が対象</li>
-          <li>口座開設後に自動付与</li>
-          <li>ボーナス自体は出金不可</li>
-          <li>利益は出金可能</li>
         </ul>
 
-        <a href="#" class="xm-evergreen-cta" onclick="goAff()">口座を開設する</a>
+        <a href="#" class="xm-evergreen-cta" onclick="goAff()">
+          口座を開設する
+        </a>
       </div>
 
-      <div class="xm-evergreen-card highlight">
-        <div class="xm-evergreen-badge">人気</div>
-        <h3 class="xm-evergreen-amount">100% + 20%</h3>
-        <p class="xm-evergreen-head">入金ボーナス</p>
-        <p class="xm-evergreen-sub">
-          最大$500（100%）＋ 最大$10,000（20%）
+      <!-- CARD 2 -->
+      <div class="xm-evergreen-card center">
+        <div class="xm-evergreen-top">更に</div>
+
+        <div class="xm-evergreen-value red">
+          100%
+        </div>
+
+        <div class="xm-evergreen-title">
+          最大$500の入金ボーナス
+        </div>
+
+        <div class="xm-evergreen-plus">＋</div>
+
+        <div class="xm-evergreen-value red">
+          20%
+        </div>
+
+        <div class="xm-evergreen-title">
+          最大総額$10,000の入金ボーナス
+        </div>
+
+        <a href="#" class="xm-evergreen-cta" onclick="goAff()">
+          口座を開設する
+        </a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="xm-evergreen-card">
+        <div class="xm-evergreen-top">更に</div>
+
+        <div class="XM2nd1_nobkg.png">
+          <img src="ot_img.png" alt="お年玉プロモ">
+        </div>
+
+        <div class="xm-evergreen-title red">
+          お年玉プロモ
+        </div>
+
+        <div class="xm-evergreen-text">
+          新年を祝して賞金総額$150,000！
+        </div>
+
+        <p class="xm-evergreen-desc">
+          15周年を記念した総額$150,000の賞金で、
+          幸運な2026年を迎えよう！
+          お年玉プロモーションに参加して、
+          $1,500の出金可能残高を手に入れるチャンス。
         </p>
-        <a href="#" class="xm-evergreen-cta" onclick="goAff()">口座を開設する</a>
+
+        <ul class="xm-evergreen-list">
+          <li>新規と既存のお客様が対象</li>
+          <li>当選者は100名様</li>
+          <li>2025年12月9日〜30日の期間限定</li>
+        </ul>
+
+        <p class="xm-evergreen-note">
+          *利用規約適用。
+        </p>
+
+        <a href="#" class="xm-evergreen-cta" onclick="goAff()">
+          口座開設
+        </a>
       </div>
 
     </div>
 
-    <p class="xm-micro" style="margin-top:28px;">
-  ※ 常設プロモーションの詳細は公式条件をご確認ください
-</p>
-
-
   </div>
 </section>
+
   
   <!-- RISK DISCLOSURE -->
 <footer class="xm-risk">
@@ -1102,7 +1247,13 @@ document.querySelectorAll(".xm-faq-question").forEach(btn => {
   });
 });
 </script>
-
+  <script>
+document.querySelectorAll(".xm-faq-question").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    btn.parentElement.classList.toggle("active");
+  });
+});
+</script>
 
 </body>
 </html>

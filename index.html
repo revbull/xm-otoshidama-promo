@@ -326,14 +326,16 @@ section{position:relative;}
 
 /* ================= INFO SPLIT (STICKER STYLE) ================= */
 
-.xm-info-split{
+/* ================= INFO STICKER SECTION ================= */
+
+.xm-info-sticker-wrap{
   position:relative;
 }
 
-/* TOP */
+/* TOP PART */
 .xm-info-top{
-  background:linear-gradient(135deg,#c9a57a,#b48a62);
-  padding:100px 20px 120px;
+  background:linear-gradient(135deg,#caa27a,#b3885d);
+  padding:100px 20px 140px;
   text-align:center;
 }
 
@@ -343,10 +345,10 @@ section{position:relative;}
   color:#fff;
 }
 
-.xm-info-eyebrow{
+.xm-info-top-eyebrow{
   font-size:14px;
-  opacity:.9;
   margin-bottom:10px;
+  opacity:.9;
 }
 
 .xm-info-top-title{
@@ -355,25 +357,25 @@ section{position:relative;}
   line-height:1.35;
 }
 
-/* STICKER IMAGE */
+/* STICKER */
 .xm-info-sticker{
   position:absolute;
   left:50%;
+  top:calc(100% - 90px); /* ключов overlap */
   transform:translateX(-50%);
-  top:calc(100% - 60px); /* overlap */
-  z-index:5;
+  z-index:10;
 }
 
 .xm-info-sticker img{
-  width:160px;
+  width:140px;
   filter:
-    drop-shadow(0 12px 20px rgba(0,0,0,.25));
+    drop-shadow(0 10px 18px rgba(0,0,0,.35));
 }
 
-/* BOTTOM */
+/* BOTTOM PART */
 .xm-info-bottom{
   background:#fff;
-  padding:140px 20px 120px; /* top padding accounts for sticker */
+  padding:140px 20px 120px; /* space for sticker */
 }
 
 .xm-info-bottom-inner{
@@ -381,6 +383,12 @@ section{position:relative;}
   margin:0 auto;
   text-align:center;
 }
+
+.xm-info-bottom-title{
+  font-size:28px;
+  margin-bottom:24px;
+}
+
 
  /* ================= STEPS SECTION (EXACT) ================= */
 
@@ -1035,12 +1043,12 @@ section{position:relative;}
   
 
 <!-- INFO -->
-<section class="xm-info-split">
+<section class="xm-info-sticker-wrap">
 
   <!-- TOP PART -->
   <div class="xm-info-top">
     <div class="xm-info-top-inner">
-      <p class="xm-info-eyebrow">
+      <p class="xm-info-top-eyebrow">
         新年の特別な贈り物
       </p>
 
@@ -1053,39 +1061,19 @@ section{position:relative;}
 
   <!-- STICKER IMAGE -->
   <div class="xm-info-sticker">
-    <img src="info1.png" alt="お年玉">
+    <img src="Info1.png" alt="お年玉">
   </div>
 
   <!-- BOTTOM PART -->
   <div class="xm-info-bottom">
     <div class="xm-info-bottom-inner">
 
-      <h2 class="xm-info-title">
+      <h2 class="xm-info-bottom-title">
         幸運な新年のスタートに
       </h2>
 
-      <p class="xm-info-text">
-        2025年12月9日〜30日に開催される期間限定お年玉プロモーション2025で、
-        新年を最高に幸運な年に！
-      </p>
-
-      <p class="xm-info-text">
-        プロモーションに登録、入金して、FX、ゴールド、またはシルバーを取引すると、
-        特別なお年玉を獲得するチャンス！
-      </p>
-
-      <p class="xm-info-reward">
-        <span>賞金</span><br>
-        出金可能残高 <strong>$1,500*</strong>
-      </p>
-
-      <p class="xm-info-meta">
-        当選者：100名様
-      </p>
-
-      <p class="xm-info-note">
-        *賞金は、お客様の取引口座の基本通貨に換算して付与されます。
-      </p>
+      <!-- тук продължава целият 1:1 операторски текст,
+           който вече имаш и НЕ променяме -->
 
     </div>
   </div>

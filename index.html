@@ -565,6 +565,37 @@ section{position:relative;}
   background:#fff;
   padding:120px 20px;
 }
+  .xm-evergreen-heading{
+  text-align:center;
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:60px;
+}
+  /* Vertical separators under heading */
+.xm-evergreen-grid{
+  position:relative;
+}
+
+.xm-evergreen-grid::before,
+.xm-evergreen-grid::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:1px;
+  background:#e5e5e5;
+}
+
+/* first separator (between card 1 & 2) */
+.xm-evergreen-grid::before{
+  left:33.333%;
+}
+
+/* second separator (between card 2 & 3) */
+.xm-evergreen-grid::after{
+  left:66.666%;
+}
+
 
 .xm-evergreen-inner{
   max-width:1200px;
@@ -577,14 +608,11 @@ section{position:relative;}
   gap:40px;
 }
 
-.xm-evergreen-card{
-  padding:30px 25px 40px;
-  border-right:1px solid #e5e5e5;
+  
+.xm-evergreen-cta{
+  margin-top:auto;   /* 🔑 това подравнява всички CTA */
 }
 
-.xm-evergreen-card:last-child{
-  border-right:none;
-}
 
 .xm-evergreen-top{
   text-align:center;
@@ -693,14 +721,6 @@ section{position:relative;}
     grid-template-columns:1fr;
   }
 
-  .xm-evergreen-card{
-    border-right:none;
-    border-bottom:1px solid #e5e5e5;
-  }
-
-  .xm-evergreen-card:last-child{
-    border-bottom:none;
-  }
 }
 
   /* ================= RISK DISCLOSURE ================= */

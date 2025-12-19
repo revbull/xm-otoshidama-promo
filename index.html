@@ -47,15 +47,12 @@ section{position:relative;}
 
 
 /* ================= TOP BAR ================= */
-.top-bar{background:#000;color:#fff;}
-.top-cta{background:var(--green);}
-
-  ..top-bar{
+.top-bar{
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  /* Soft fade към Hero */
+  /* Soft fade към Hero (JP-friendly) */
   background: linear-gradient(
     180deg,
     rgba(0,0,0,.95) 0%,
@@ -70,23 +67,12 @@ section{position:relative;}
   align-items: center;
   padding: 12px 20px;
 
-  /* леко „стъкло“, много JP-friendly */
+  /* лек „glass“ ефект */
   backdrop-filter: blur(4px);
 }
 
-
+/* LEFT */
 .top-left{
-  display: flex;
-  align-items: center;
-}
-
-.top-center{
-  text-align: center;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.top-right{
   display: flex;
   align-items: center;
 }
@@ -95,13 +81,42 @@ section{position:relative;}
   height: 32px;
 }
 
+/* CENTER */
+.top-center{
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: .95;
+  white-space: nowrap;
+}
+
+/* RIGHT */
+.top-right{
+  display: flex;
+  align-items: center;
+}
+
 .top-cta{
   background: var(--green);
-  padding: 12px 30px; /* по-дълъг CTA */
+  padding: 12px 34px; /* по-дълъг CTA */
   border-radius: 4px;
   font-weight: bold;
   white-space: nowrap;
+  transition: background .2s ease, transform .2s ease;
 }
+
+.top-cta:hover{
+  background: #279444;
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .top-center{
+    display: none;
+  }
+}
+
 
 
 /* ================= HERO ================= */
@@ -687,12 +702,7 @@ section{position:relative;}
     display: none;
   }
 }
-  .xm-divider{
-  text-align:center;
-  color:rgba(0,0,0,.25);
-  margin:40px 0;
-  font-size:14px;
-}
+
 .xm-step,
 .evergreen-card{
   transition:transform .25s ease, box-shadow .25s ease;
@@ -821,8 +831,7 @@ section{position:relative;}
   </div>
 </div>
   
-  <div class="xm-divider">◆</div>
-
+ 
 
 <!-- HERO -->
 <section class="xm-hero-bg">

@@ -324,81 +324,63 @@ section{position:relative;}
 }
 
 
+/* ================= INFO SPLIT (STICKER STYLE) ================= */
 
-
-/* ================= INFO SECTION (EXACT) ================= */
-
-.xm-info-exact{
-  background: #fff;
-  padding: 120px 20px;
+.xm-info-split{
+  position:relative;
 }
 
-.xm-info-exact-inner{
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
+/* TOP */
+.xm-info-top{
+  background:linear-gradient(135deg,#c9a57a,#b48a62);
+  padding:100px 20px 120px;
+  text-align:center;
 }
 
-.xm-info-title{
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 24px;
+.xm-info-top-inner{
+  max-width:900px;
+  margin:0 auto;
+  color:#fff;
 }
 
-.xm-info-text{
-  font-size: 15px;
-  line-height: 1.9;
-  margin-bottom: 14px;
-  color: #111;
+.xm-info-eyebrow{
+  font-size:14px;
+  opacity:.9;
+  margin-bottom:10px;
 }
 
-.xm-info-image{
-  margin: 50px 0 40px;
+.xm-info-top-title{
+  font-size:34px;
+  font-weight:700;
+  line-height:1.35;
 }
 
-.xm-info-image img{
-  width: 160px;
-  max-width: 100%;
+/* STICKER IMAGE */
+.xm-info-sticker{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:calc(100% - 60px); /* overlap */
+  z-index:5;
 }
 
-.xm-info-reward{
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 14px;
+.xm-info-sticker img{
+  width:160px;
+  filter:
+    drop-shadow(0 12px 20px rgba(0,0,0,.25));
 }
 
-.xm-info-reward span{
-  color: #d62828;
-  font-weight: 700;
+/* BOTTOM */
+.xm-info-bottom{
+  background:#fff;
+  padding:140px 20px 120px; /* top padding accounts for sticker */
 }
 
-.xm-info-reward strong{
-  font-size: 22px;
+.xm-info-bottom-inner{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
 }
-
-.xm-info-meta{
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.xm-info-note{
-  font-size: 12px;
-  color: #666;
-}
-
-/* Mobile */
-@media (max-width: 900px){
-  .xm-info-exact{
-    padding: 80px 20px;
-  }
-
-  .xm-info-title{
-    font-size: 24px;
-  }
-}
-
-
-
 
  /* ================= STEPS SECTION (EXACT) ================= */
 
@@ -1053,43 +1035,62 @@ section{position:relative;}
   
 
 <!-- INFO -->
-<section class="xm-info-exact">
-  <div class="xm-info-exact-inner">
+<section class="xm-info-split">
 
-    <h2 class="xm-info-title">
-      幸運な新年のスタートに
-    </h2>
+  <!-- TOP PART -->
+  <div class="xm-info-top">
+    <div class="xm-info-top-inner">
+      <p class="xm-info-eyebrow">
+        新年の特別な贈り物
+      </p>
 
-    <p class="xm-info-text">
-      2025年12月9日〜30日に開催される期間限定お年玉プロモーション2025で、
-      新年を最高に幸運な年に！
-    </p>
-
-    <p class="xm-info-text">
-      プロモーションに登録、入金して、FX、ゴールド、またはシルバーを取引すると、
-      特別なお年玉を獲得するチャンス！
-    </p>
-
-    <div class="xm-info-image">
-      <img src="ot_img.png" alt="お年玉">
+      <h2 class="xm-info-top-title">
+        お年玉ボーナスで、<br>
+        2025年を最高のスタートに。
+      </h2>
     </div>
-
-    <p class="xm-info-reward">
-      <span>賞金</span><br>
-      出金可能残高 <strong>$1,500*</strong>
-    </p>
-
-    <p class="xm-info-meta">
-      当選者：100名様
-    </p>
-
-    <p class="xm-info-note">
-      *賞金は、お客様の取引口座の基本通貨に換算して付与されます。
-    </p>
-
   </div>
-</section>
 
+  <!-- STICKER IMAGE -->
+  <div class="xm-info-sticker">
+    <img src="info1.png" alt="お年玉">
+  </div>
+
+  <!-- BOTTOM PART -->
+  <div class="xm-info-bottom">
+    <div class="xm-info-bottom-inner">
+
+      <h2 class="xm-info-title">
+        幸運な新年のスタートに
+      </h2>
+
+      <p class="xm-info-text">
+        2025年12月9日〜30日に開催される期間限定お年玉プロモーション2025で、
+        新年を最高に幸運な年に！
+      </p>
+
+      <p class="xm-info-text">
+        プロモーションに登録、入金して、FX、ゴールド、またはシルバーを取引すると、
+        特別なお年玉を獲得するチャンス！
+      </p>
+
+      <p class="xm-info-reward">
+        <span>賞金</span><br>
+        出金可能残高 <strong>$1,500*</strong>
+      </p>
+
+      <p class="xm-info-meta">
+        当選者：100名様
+      </p>
+
+      <p class="xm-info-note">
+        *賞金は、お客様の取引口座の基本通貨に換算して付与されます。
+      </p>
+
+    </div>
+  </div>
+
+</section>
 
 
 <!-- STEPS -->

@@ -62,6 +62,65 @@ a{text-decoration:none;color:inherit}
   font-weight:bold;
   border-radius:4px;
 }
+  /* ===== QUICK NAV (STATIC, ONE ROW) ===== */
+.xm-quick-nav{
+  background:#fff;
+  border-bottom:1px solid #e5e5e5;
+  padding:14px 20px;
+}
+
+.xm-quick-nav-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.xm-quick-nav-row{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+/* label – NOT a button */
+.xm-quick-nav-label{
+  font-size:13px;
+  color:#777;
+  font-weight:600;
+  margin-right:6px;
+  white-space:nowrap;
+}
+
+/* links */
+.xm-quick-nav-link{
+  font-size:14px;
+  color:#333;
+  text-decoration:none;
+  padding:6px 2px;
+  position:relative;
+}
+
+.xm-quick-nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:0;
+  height:1px;
+  background:#d62828;
+  transition:width .2s ease;
+}
+
+.xm-quick-nav-link:hover::after{
+  width:100%;
+}
+
+/* mobile */
+@media(max-width:900px){
+  .xm-quick-nav-row{
+    gap:14px;
+  }
+}
+
 
 /* ===== INFO NOTE ===== */
 .xm-info{padding:120px 20px;}
@@ -471,6 +530,40 @@ a{text-decoration:none;color:inherit}
     <a onclick="goAff()">今すぐ参加</a>
   </div>
 </section>
+  
+  <section class="xm-celebration">
+  <div class="xm-celebration-overlay"></div>
+  <div class="xm-celebration-inner">
+    <h2>新年の特別な贈り物</h2>
+    <p>
+      お年玉ボーナスで、<br>
+      2025年を最高のスタートに。
+    </p>
+  </div>
+</section>
+
+  <section class="xm-quick-nav">
+  <div class="xm-quick-nav-inner">
+
+    <div class="xm-quick-nav-row">
+
+      <div class="xm-quick-nav-label">
+        クイックナビ
+      </div>
+
+      <a href="#" onclick="goAff()" class="xm-quick-nav-link">ホーム</a>
+      <a href="#" onclick="goAff()" class="xm-quick-nav-link">プロモーション</a>
+      <a href="#" onclick="goAff()" class="xm-quick-nav-link">会員ページ</a>
+      <a href="#" onclick="goAff()" class="xm-quick-nav-link">サポート</a>
+      <a href="#" onclick="goAff()" class="xm-quick-nav-link">その他のプロモーション</a>
+      <a href="#" onclick="goAff()" class="xm-quick-nav-link">FAQ</a>
+
+    </div>
+
+  </div>
+</section>
+
+
 
 <section class="xm-info">
   <div class="xm-info-note">
@@ -496,6 +589,7 @@ a{text-decoration:none;color:inherit}
 
   </div>
 </section>
+  
   <section class="xm-steps">
   <div class="xm-steps-inner">
 

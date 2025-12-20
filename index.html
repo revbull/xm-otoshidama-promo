@@ -63,6 +63,7 @@ a{text-decoration:none;color:inherit}
   border-radius:4px;
 }
   /* ===== QUICK NAV (STATIC, ONE ROW) ===== */
+/* ===== QUICK NAV (JP STYLE) ===== */
 .xm-quick-nav{
   background:#fff;
   border-bottom:1px solid #e5e5e5;
@@ -81,45 +82,62 @@ a{text-decoration:none;color:inherit}
   flex-wrap:wrap;
 }
 
-/* label – NOT a button */
+/* LABEL */
 .xm-quick-nav-label{
   font-size:13px;
-  color:#777;
+  color:#666;
   font-weight:600;
-  margin-right:6px;
+  letter-spacing:.5px;
   white-space:nowrap;
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
 
-/* links */
+/* Arrow – visual anchor */
+.xm-quick-nav-arrow{
+  font-size:14px;
+  color:#d62828; /* shu-iro */
+}
+
+/* LINKS (NOT buttons) */
 .xm-quick-nav-link{
   font-size:14px;
   color:#333;
   text-decoration:none;
-  padding:6px 2px;
+  padding:4px 2px;
   position:relative;
 }
 
+/* Seasonal underline */
 .xm-quick-nav-link::after{
   content:"";
   position:absolute;
   left:0;
-  bottom:0;
+  bottom:-2px;
   width:0;
-  height:1px;
-  background:#d62828;
-  transition:width .2s ease;
+  height:2px;
+  background:#d62828; /* shu-iro */
+  transition:width .25s ease;
 }
 
+/* Hover */
 .xm-quick-nav-link:hover::after{
   width:100%;
 }
 
-/* mobile */
+/* Optional subtle hover color */
+.xm-quick-nav-link:hover{
+  color:#000;
+}
+
+/* Mobile */
 @media(max-width:900px){
   .xm-quick-nav-row{
     gap:14px;
   }
 }
+
 
 /* ================= CELEBRATION (FINAL) ================= */
 
@@ -643,16 +661,16 @@ a{text-decoration:none;color:inherit}
 
     <div class="xm-quick-nav-row">
 
-      <div class="xm-quick-nav-label">
-        クイックナビ
-      </div>
+     <div class="xm-quick-nav-label">
+  クイックナビ <span class="xm-quick-nav-arrow">→</span>
+</div>
 
       <a href="#" onclick="goAff()" class="xm-quick-nav-link">ホーム</a>
       <a href="#" onclick="goAff()" class="xm-quick-nav-link">プロモーション</a>
       <a href="#" onclick="goAff()" class="xm-quick-nav-link">会員ページ</a>
       <a href="#" onclick="goAff()" class="xm-quick-nav-link">サポート</a>
       <a href="#" onclick="goAff()" class="xm-quick-nav-link">その他のプロモーション</a>
-      <a href="#" onclick="goAff()" class="xm-quick-nav-link">FAQ</a>
+      <a href="#" onclick="goAff()" class="xm-quick-nav-link">よくあるご質問</a>
 
     </div>
 

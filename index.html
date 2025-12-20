@@ -137,6 +137,103 @@ a{text-decoration:none;color:inherit}
     gap:14px;
   }
 }
+  /* ===== HERO → QUICK NAV DIVIDER ===== */
+.xm-quick-nav{
+  position: relative;
+}
+
+/* subtle divider line */
+.xm-quick-nav::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(0,0,0,.15),
+    transparent
+  );
+}
+/* ===== QUICK NAV – ACTIVE STATE ===== */
+
+/* active link */
+.xm-quick-nav-link.is-active{
+  color:#000;
+  font-weight:600;
+}
+
+/* underline stays visible */
+.xm-quick-nav-link.is-active::after{
+  width:100%;
+}
+
+/* small dot indicator (JP subtle) */
+.xm-quick-nav-link.is-active::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-6px;
+  width:4px;
+  height:4px;
+  background:#d62828; /* shu-iro */
+  border-radius:50%;
+  transform:translateX(-50%);
+}
+/* ===== QUICK NAV – MOBILE UX ===== */
+@media(max-width:900px){
+
+  .xm-quick-nav{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .xm-quick-nav-inner{
+    max-width:none;
+  }
+
+  .xm-quick-nav-row{
+    flex-wrap:nowrap;              /* 1 ред */
+    white-space:nowrap;
+    gap:18px;
+    padding-bottom:6px;
+  }
+
+  /* hide scrollbar (JP aesthetic) */
+  .xm-quick-nav::-webkit-scrollbar{
+    display:none;
+  }
+  .xm-quick-nav{
+    scrollbar-width:none;
+  }
+
+  /* label stays visible */
+  .xm-quick-nav-label{
+    flex-shrink:0;
+    margin-right:4px;
+  }
+
+  .xm-quick-nav-link{
+    flex-shrink:0;
+    font-size:14px;
+  }
+}
+@media(max-width:900px){
+  .xm-quick-nav::after{
+    content:"›";
+    position:absolute;
+    right:8px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#bbb;
+    font-size:20px;
+    pointer-events:none;
+  }
+}
+
 
 
 /* ================= CELEBRATION (FINAL) ================= */
@@ -646,18 +743,7 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
   
-  <section class="xm-celebration">
-  <div class="xm-celebration-overlay"></div>
-  <div class="xm-celebration-inner">
-    <h2>新年の特別な贈り物</h2>
-    <p>
-      お年玉ボーナスで、<br>
-      2025年を最高のスタートに。
-    </p>
-  </div>
-</section>
-
-  <section class="xm-quick-nav">
+   <section class="xm-quick-nav">
   <div class="xm-quick-nav-inner">
 
     <div class="xm-quick-nav-row">
@@ -677,8 +763,17 @@ a{text-decoration:none;color:inherit}
 
   </div>
 </section>
-
-
+  
+  <section class="xm-celebration">
+  <div class="xm-celebration-overlay"></div>
+  <div class="xm-celebration-inner">
+    <h2>新年の特別な贈り物</h2>
+    <p>
+      お年玉ボーナスで、<br>
+      2025年を最高のスタートに。
+    </p>
+  </div>
+</section>
 
 <section class="xm-info">
   <div class="xm-info-note">

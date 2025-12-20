@@ -35,34 +35,94 @@ a{text-decoration:none;color:inherit}
 }
 @media(max-width:900px){.top-center{display:none;}}
 
-/* ===== HERO ===== */
-.xm-hero{
-  min-height:85vh;
-  background:url("hero.png") center/cover no-repeat;
-  position:relative;
-  color:#fff;
+  /* ===== HERO PERIOD ===== */
+.xm-hero-period{
+  position:absolute;
+  top:24px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:13px;
+  letter-spacing:.4px;
+  color:rgba(255,255,255,.9);
+  background:rgba(0,0,0,.45);
+  padding:6px 14px;
+  border-radius:20px;
+  z-index:3;
 }
-.xm-hero::after{
-  content:"";
-  position:absolute;inset:0;
-  background:rgba(8,15,30,.55);
+
+/* ===== HERO TEXT POLISH ===== */
+
+.xm-hero-content{
+  max-width:520px;
+  text-align:left;
 }
-.xm-hero-inner{
-  position:relative;z-index:2;
-  max-width:1100px;
-  margin:auto;
-  padding:120px 20px;
+
+.xm-hero-kicker{
+  font-size:14px;
+  letter-spacing:.5px;
+  margin-bottom:12px;
+  opacity:.9;
 }
-.xm-hero h1{font-size:42px;margin-bottom:16px;}
-.xm-hero p{font-size:18px;margin-bottom:28px;}
-.xm-hero a{
-  background:#2fa84f;
-  padding:18px 48px;
+
+.xm-hero-title{
+  font-size:42px;
+  line-height:1.25;
+  margin-bottom:16px;
+  font-weight:700;
+}
+
+.xm-hero-title span{
+  color:#ffd27d; /* subtle gold accent */
+}
+
+.xm-hero-note-main{
+  font-size:16px;
+  line-height:1.7;
+  margin-bottom:28px;
+  opacity:.95;
+}
+
+/* CTA – longer */
+.xm-hero-cta{
   display:inline-block;
+  min-width:360px;
+  text-align:center;
+  background:#2fa84f;
+  color:#fff;
+  padding:18px 0;
+  font-size:17px;
   font-weight:bold;
   border-radius:4px;
 }
-  /* ===== QUICK NAV (STATIC, ONE ROW) ===== */
+
+/* legal note */
+.xm-hero-legal{
+  margin-top:12px;
+  font-size:12px;
+  line-height:1.6;
+  color:rgba(255,255,255,.85);
+}
+
+.xm-hero-legal a{
+  color:#ffd27d;
+  text-decoration:underline;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .xm-hero-content{
+    text-align:center;
+  }
+
+  .xm-hero-cta{
+    min-width:100%;
+  }
+
+  .xm-hero-title{
+    font-size:30px;
+  }
+}
+
 /* ===== QUICK NAV (JP STYLE) ===== */
 .xm-quick-nav{
   background:#fff;
@@ -735,12 +795,37 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <section class="xm-hero">
-  <div class="xm-hero-inner">
-    <h1>賞金総額$150,000の
-獲得チャンス！</h1>
-    <p>XMTrading15周年記念、幸運なお年玉が当たるチャンス！100名様に$1,500の出金可能残高*をプレゼント。</p>
-    <a onclick="goAff()">今すぐ参加</a>
-  </div>
+  <div class="xm-hero-period">
+  プロモーション期間：2025年12月9日～30日
+</div>
+
+  <div class="xm-hero-content">
+
+  <p class="xm-hero-kicker">
+    お年玉プロモーション
+  </p>
+
+  <h1 class="xm-hero-title">
+    賞金総額<span>$150,000</span>の<br>
+    獲得チャンス！
+  </h1>
+
+  <p class="xm-hero-note-main">
+    XMTrading15周年記念、幸運なお年玉が当たるチャンス！<br>
+    100名様に<strong>$1,500</strong>の出金可能残高*をプレゼント。
+  </p>
+
+  <a href="#" class="xm-hero-cta" onclick="goAff()">
+    今すぐ口座を開設して参加する
+  </a>
+
+  <p class="xm-hero-legal">
+    *利用規約適用。利用規約の全文を読むには、
+    <a href="#" onclick="goAff()">こちら</a>をクリックしてください。
+  </p>
+
+</div>
+
 </section>
   
    <section class="xm-quick-nav">

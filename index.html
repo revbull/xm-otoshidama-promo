@@ -964,6 +964,19 @@ a{text-decoration:none;color:inherit}
 *{
   -webkit-tap-highlight-color: transparent;
 }
+  /* ===== MOBILE: hide top CTA, keep logo ===== */
+@media (max-width: 900px){
+  .top-cta{
+    display: none;
+  }
+}
+  
+@media (max-width: 900px){
+  .top-bar{
+    grid-template-columns: auto 1fr;
+  }
+}
+
 
 </style>
 

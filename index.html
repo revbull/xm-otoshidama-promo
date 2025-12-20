@@ -120,64 +120,99 @@ a{text-decoration:none;color:inherit}
     gap:14px;
   }
 }
-/* ===== CELEBRATION ===== */
-/* ===== CELEBRATION SECTION ===== */
+
+/* ================= CELEBRATION (FINAL) ================= */
+
 .xm-celebration{
-  position:relative;
-  min-height:420px;
-  background:url("NY_FX.png") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fff;
+  position: relative;
+  height: 420px;
+  background-image: url("NY_FX.png"); /* твоя празничен image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Option A – subtle parallax */
+  background-attachment: fixed;
+
+  overflow: hidden;
 }
 
-/* dark overlay for readability */
-.xm-celebration::before{
+/* Dark + color overlay (readability & premium feel) */
+.xm-celebration-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(28,42,64,.75) 0%,
+      rgba(28,42,64,.55) 45%,
+      rgba(28,42,64,.85) 100%
+    );
+}
+
+/* Option B – VERY subtle floating particles */
+.xm-celebration::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(8,15,30,.65) 0%,
-    rgba(8,15,30,.45) 50%,
-    rgba(8,15,30,.70) 100%
-  );
+  background-image:
+    radial-gradient(2px 2px at 18% 28%, rgba(255,255,255,.28) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 62% 42%, rgba(255,255,255,.22) 50%, transparent 51%),
+    radial-gradient(1px 1px at 38% 70%, rgba(255,255,255,.18) 50%, transparent 51%);
+  animation: celebrationFloat 22s linear infinite;
+  pointer-events:none;
+  opacity:.9;
 }
 
+/* Content */
 .xm-celebration-inner{
-  position:relative;
-  z-index:2;
-  max-width:900px;
-  padding:0 20px;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
 }
 
-.xm-celebration h2{
-  font-size:34px;
-  font-weight:700;
-  margin-bottom:14px;
-  letter-spacing:.4px;
+.xm-celebration-inner h2{
+  font-size: 34px;
+  margin-bottom: 14px;
+  letter-spacing: .4px;
 }
 
-.xm-celebration p{
-  font-size:18px;
-  line-height:1.7;
-  opacity:.95;
+.xm-celebration-inner p{
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: .95;
 }
 
-/* Mobile */
-@media(max-width:900px){
+/* Animation */
+@keyframes celebrationFloat{
+  from{
+    background-position: 0 0, 0 0, 0 0;
+  }
+  to{
+    background-position: 0 -260px, 0 -180px, 0 -140px;
+  }
+}
+
+/* Mobile – disable parallax (best practice) */
+@media (max-width: 900px){
   .xm-celebration{
-    min-height:300px;
+    height: 300px;
+    background-attachment: scroll;
   }
 
-  .xm-celebration h2{
-    font-size:26px;
+  .xm-celebration-inner h2{
+    font-size: 26px;
   }
 
-  .xm-celebration p{
-    font-size:16px;
+  .xm-celebration-inner p{
+    font-size: 16px;
   }
 }
 

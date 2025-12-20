@@ -51,7 +51,57 @@ a{text-decoration:none;color:inherit}
 }
 
 /* ===== HERO TEXT POLISH ===== */
+/* ================= HERO (FINAL) ================= */
 
+.xm-hero{
+  position:relative;
+  min-height:90vh;
+  background:url("hero-bg.png") center/cover no-repeat;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* Dark overlay */
+.xm-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(8,15,30,.65) 0%,
+    rgba(8,15,30,.45) 40%,
+    rgba(8,15,30,.65) 100%
+  );
+  z-index:1;
+}
+
+/* Period badge */
+.xm-hero-period{
+  position:absolute;
+  top:22px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:13px;
+  letter-spacing:.4px;
+  color:rgba(255,255,255,.9);
+  background:rgba(0,0,0,.45);
+  padding:6px 14px;
+  border-radius:20px;
+  z-index:3;
+}
+
+/* Inner layout */
+.xm-hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:0 auto;
+  padding:120px 20px;
+  display:flex;
+  align-items:center;
+  gap:60px;
+}
+
+/* LEFT */
 .xm-hero-content{
   max-width:520px;
   text-align:left;
@@ -72,7 +122,7 @@ a{text-decoration:none;color:inherit}
 }
 
 .xm-hero-title span{
-  color:#ffd27d; /* subtle gold accent */
+  color:#ffd27d;
 }
 
 .xm-hero-note-main{
@@ -82,7 +132,7 @@ a{text-decoration:none;color:inherit}
   opacity:.95;
 }
 
-/* CTA – longer */
+/* CTA */
 .xm-hero-cta{
   display:inline-block;
   min-width:360px;
@@ -94,8 +144,50 @@ a{text-decoration:none;color:inherit}
   font-weight:bold;
   border-radius:4px;
 }
+/* ================= CTA HOVER POLISH ================= */
 
-/* legal note */
+/* base transition */
+.xm-hero-cta,
+.xm-steps-cta,
+.xm-evergreen-cta,
+.top-cta{
+  transition:
+    background-color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+/* hover (desktop) */
+.xm-hero-cta:hover,
+.xm-steps-cta:hover,
+.xm-evergreen-cta:hover,
+.top-cta:hover{
+  background:#279444;                 /* леко по-тъмен green */
+  transform:translateY(-1px);         /* micro-lift */
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+}
+
+/* active (click / tap) */
+.xm-hero-cta:active,
+.xm-steps-cta:active,
+.xm-evergreen-cta:active,
+.top-cta:active{
+  transform:translateY(0);
+  box-shadow:0 3px 8px rgba(0,0,0,.22);
+}
+
+/* mobile: disable hover jump */
+@media (hover:none){
+  .xm-hero-cta:hover,
+  .xm-steps-cta:hover,
+  .xm-evergreen-cta:hover,
+  .top-cta:hover{
+    transform:none;
+    box-shadow:none;
+  }
+}
+
+/* Legal */
 .xm-hero-legal{
   margin-top:12px;
   font-size:12px;
@@ -108,20 +200,46 @@ a{text-decoration:none;color:inherit}
   text-decoration:underline;
 }
 
+/* RIGHT IMAGE */
+.xm-hero-visual{
+  flex:0 0 320px;
+  text-align:center;
+}
+
+.xm-hero-visual img{
+  width:100%;
+  max-width:280px;
+  filter:
+    drop-shadow(0 40px 50px rgba(0,0,0,.45))
+    drop-shadow(0 12px 22px rgba(0,0,0,.35));
+}
+
 /* Mobile */
 @media(max-width:900px){
+  .xm-hero-inner{
+    flex-direction:column;
+    text-align:center;
+    padding:100px 20px 80px;
+  }
+
   .xm-hero-content{
     text-align:center;
+  }
+
+  .xm-hero-title{
+    font-size:30px;
   }
 
   .xm-hero-cta{
     min-width:100%;
   }
 
-  .xm-hero-title{
-    font-size:30px;
+  .xm-hero-visual{
+    margin-top:24px;
   }
 }
+
+
 
 /* ===== QUICK NAV (JP STYLE) ===== */
 .xm-quick-nav{
@@ -795,38 +913,54 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <section class="xm-hero">
+
+  <!-- Period -->
   <div class="xm-hero-period">
-  プロモーション期間：2025年12月9日～30日
-</div>
+    プロモーション期間：2025年12月9日～30日
+  </div>
 
-  <div class="xm-hero-content">
+  <!-- Overlay -->
+  <div class="xm-hero-overlay"></div>
 
-  <p class="xm-hero-kicker">
-    お年玉プロモーション
-  </p>
+  <div class="xm-hero-inner">
 
-  <h1 class="xm-hero-title">
-    賞金総額<span>$150,000</span>の<br>
-    獲得チャンス！
-  </h1>
+    <!-- LEFT: TEXT -->
+    <div class="xm-hero-content">
 
-  <p class="xm-hero-note-main">
-    XMTrading15周年記念、幸運なお年玉が当たるチャンス！<br>
-    100名様に<strong>$1,500</strong>の出金可能残高*をプレゼント。
-  </p>
+      <p class="xm-hero-kicker">
+        お年玉プロモーション
+      </p>
 
-  <a href="#" class="xm-hero-cta" onclick="goAff()">
-    今すぐ口座を開設して参加する
-  </a>
+      <h1 class="xm-hero-title">
+        賞金総額<span>$150,000</span>の<br>
+        獲得チャンス！
+      </h1>
 
-  <p class="xm-hero-legal">
-    *利用規約適用。利用規約の全文を読むには、
-    <a href="#" onclick="goAff()">こちら</a>をクリックしてください。
-  </p>
+      <p class="xm-hero-note-main">
+        XMTrading15周年記念、幸運なお年玉が当たるチャンス！<br>
+        100名様に<strong>$1,500</strong>の出金可能残高*をプレゼント。
+      </p>
 
-</div>
+      <a href="#" class="xm-hero-cta" onclick="goAff()">
+        今すぐ口座を開設して参加する
+      </a>
 
+      <p class="xm-hero-legal">
+        *利用規約適用。利用規約の全文を読むには、
+        <a href="#" onclick="goAff()">こちら</a>をクリックしてください。
+      </p>
+
+    </div>
+
+    <!-- RIGHT: IMAGE PLACEHOLDER -->
+    <div class="xm-hero-visual">
+      <!-- Replace src later -->
+      <img src="hero.png" alt="お年玉">
+    </div>
+
+  </div>
 </section>
+
   
    <section class="xm-quick-nav">
   <div class="xm-quick-nav-inner">

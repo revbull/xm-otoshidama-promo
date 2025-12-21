@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting…</title>
+
+  <script>
+    const LINKS = {
+      "0": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=0",
+      "1": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=1",
+      "2": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=2",
+      "6": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=6",
+      "18": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=18",
+      "22": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=22"
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get("p") || "6";
+
+    const target = LINKS[p] || LINKS["6"];
+
+    window.location.replace(target);
+  </script>
+</head>
+<body>
+  <p>リダイレクト中…</p>
+</body>
+</html>

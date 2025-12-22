@@ -2,25 +2,23 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Redirecting…</title>
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E34NET6FZH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-E34NET6FZH', { send_page_view: false });
+    gtag('config', 'G-E34NET6FZH');
   </script>
-
-  <title>Redirecting...</title>
 </head>
 
 <body>
 <script>
-(function () {
+  const params = new URLSearchParams(window.location.search);
+  const p = params.get("p") || "6";
 
-  /* 1️⃣ MAP p -> affiliate link */
   const AFF_MAP = {
     "0": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=0",
     "1": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=1",
@@ -30,28 +28,21 @@
     "22": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=22"
   };
 
-  /* 2️⃣ Read ?p= */
-  const params = new URLSearchParams(window.location.search);
-  const p = params.get("p") || "6";
   const target = AFF_MAP[p] || AFF_MAP["6"];
 
-  /* 3️⃣ GA4 EVENT */
+  // 🔥 GA4 EVENT (THIS IS THE CONVERSION)
   gtag("event", "affiliate_click", {
     event_category: "outbound",
-    event_label: "p_" + p,
-    destination: target
+    event_label: "xm_affiliate",
+    destination: target,
+    value: 1
   });
 
-  /* 4️⃣ SAFE REDIRECT (after GA send) */
-  setTimeout(function () {
-    window.location.replace(target);
-  }, 180);
-
-})();
+  // ⏳ small delay so GA4 can send the hit
+  setTimeout(() => {
+    window.location.href = target;
+  }, 350);
 </script>
-
-<noscript>
-  <meta http-equiv="refresh" content="0;url=https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">
-</noscript>
 </body>
 </html>
+
